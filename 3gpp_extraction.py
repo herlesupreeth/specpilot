@@ -24,8 +24,9 @@ DOWNLOAD_DIR = "spec_md"
 
 def convert_to_md(doc_path, md_path):
     try:
-        subprocess.run(["pandoc", "-f", "docx", "-t", "gfm", "--extract-media=./media", doc_path, "-o", md_path],
-            capture_output=True, check=True)
+        subprocess.run(
+            ["pandoc", "-f", "docx", "-t", "markdown", "--extract-media", ".", os.path.abspath(doc_path), "-o",
+             os.path.abspath(md_path)], cwd=os.path.dirname(md_path), capture_output=True, check=True)
     except subprocess.CalledProcessError as e:
         print(f"Error converting {doc_path} to Markdown: {e}")
     except Exception as e:
@@ -36,34 +37,38 @@ def unzip_and_convert(zip_path, zip_extract_dir, md_file_dir):
     print(f"Unzipping: {zip_path}")
     with zipfile.ZipFile(zip_path, 'r') as zip_ref:
         zip_ref.extractall(zip_extract_dir)
-    # Walk through extracted files and convert .doc/.docx to .md
+    # Walk through extracted files and convert .doc to .docx to .md
     for root, dirs, files in os.walk(zip_extract_dir):
         for file in files:
-            if (not file.lower().endswith('.doc')) and (not file.lower().endswith('.docx')):
-                continue
             if file.lower().endswith('.doc') and not file.lower().endswith('.docx'):
                 doc_path = os.path.join(root, file)
-                docx_path = os.path.join(root, file.rsplit('.', 1)[0] + ".docx")
                 try:
                     # Use LibreOffice to convert .doc to .docx
                     subprocess.run(["libreoffice", "--headless", "--convert-to", "docx", "--outdir", root, doc_path],
-                        capture_output=True, check=True)
-                    # Update a path to .docx for Markdown conversion
-                    doc_path = docx_path
+                                   capture_output=True, check=True)
                 except subprocess.CalledProcessError as e:
                     print(f"Error converting {file} to .docx: {e}")
                     continue
 
-                print(f"Converting to Markdown: {doc_path}")
-                md_file_path = os.path.join(md_file_dir, file.rsplit('.', 1)[0] + ".md")
-                convert_to_md(doc_path, md_file_path)
+    # Walk through extracted files and convert .docx to .md
+    for root, dirs, files in os.walk(zip_extract_dir):
+        for file in files:
+            if not file.lower().endswith('.docx'):
+                continue
 
-    # Clean up extracted files (except .md)
+            doc_path = os.path.join(root, file)
+            print(f"Converting to Markdown: {doc_path}")
+            md_file_path = os.path.join(md_file_dir, file.rsplit('.', 1)[0] + ".md")
+            convert_to_md(doc_path, md_file_path)
+
+    # Clean up extracted files
     shutil.rmtree(zip_extract_dir)
-    os.remove(zip_path)
 
 
 def download_file(url, save_path):
+    if os.path.exists(save_path):
+        print(f"File already exists: {save_path}")
+        return True
     print(f"Downloading: {url}")
     response = requests.get(url)
     if response.status_code != 200:
@@ -89,9 +94,6 @@ def download_and_process(release, spec_series):
     if not os.path.exists(download_dir):
         print(f"Creating directory: {download_dir}")
         os.makedirs(download_dir)
-        media_dir = os.path.join(download_dir, "media")
-        print(f"Creating directory: {media_dir}")
-        os.makedirs(media_dir)
     for link in soup.find_all('a'):
         file_url = link.get('href')
         if not file_url or file_url in ('../', './'):
@@ -99,7 +101,6 @@ def download_and_process(release, spec_series):
         if file_url.lower().endswith('.zip'):
             zip_file_name = file_url.rsplit('/')[-1]
             zip_file_name_without_extension = zip_file_name.rsplit('.', 1)[0]
-            print(f"Checking for existing Markdown files in: {download_dir}")
             if any(f.startswith(zip_file_name_without_extension) and f.endswith('.md') for f in
                    os.listdir(download_dir)):
                 print(f"Markdown file already exists for {zip_file_name_without_extension}, skipping conversion.")
