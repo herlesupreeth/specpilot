@@ -9,7 +9,7 @@ This repository aims to provide the tools to deploy an AI-powered assistant for 
    - Output is organized by release in the `spec_md/` directory
 
 2. **ChatGPT-like Features (Ollama + AnythingLLM):**
-   - Runs Ollama locally to provide LLM inference (e.g., Mistral, Nomic Embed)
+   - Runs Ollama locally to provide LLM inference (e.g., mistral, deepseek-r1)
    - Deploys AnythingLLM via Docker to enable a chat interface over your documents
    - Allows advanced querying, context window management
 
@@ -41,7 +41,7 @@ This repository aims to provide the tools to deploy an AI-powered assistant for 
 2. **Install Ollama and Download Models:**
    ```bash
    curl -fsSL https://ollama.com/install.sh | sh
-   ollama pull mistral
+   ollama pull deepseek-r1
    ollama pull nomic-embed-text
    # You can use other Ollama models as well. See https://ollama.com/library for available models.
    ```
@@ -81,8 +81,8 @@ This will download, extract, and convert 3GPP specs to markdown in `spec_md/`.
 
    **Note:** If Ollama is already running, you can skip this step.
    ```bash
-   ollama serve mistral
-   # Replace 'mistral' with any other model you have pulled if desired.
+   ollama serve deepseek-r1
+   # Replace 'deepseek-r1' with any other model you have pulled if desired.
    ```
    Visit http://localhost:11434 to verify Ollama is running.
 
