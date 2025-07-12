@@ -1,7 +1,7 @@
 
 # Specpilot
 
-Specpilot is an AI-powered assistant for 3GPP specification, combining two main components:
+This repository aims to provide the tools to deploy an AI-powered assistant for 3GPP specification, combining two main components:
 
 1. **3GPP Specification Extraction (Python Script):**
    - Downloads official 3GPP specifications
@@ -29,6 +29,7 @@ Specpilot is an AI-powered assistant for 3GPP specification, combining two main 
 - Docker Compose
 - Python 3.8+
 - Ollama (for local LLMs)
+- Pandoc
 
 ### Steps
 1. Clone this repository:
@@ -63,6 +64,7 @@ SERIES = ["38_series"]
 Then run:
 
 ```bash
+sudo apt-get install -y pandoc
 pip install -r requirements.txt
 python3 3gpp_extraction.py
 ```
