@@ -37,24 +37,7 @@ Specpilot is an AI-powered assistant for 3GPP specification, combining two main 
    cd specpilot
    ```
 
-2. **Download 3GPP Specifications:**
-   Currently, the repository contains 38 series specifications from Release 15-18 already downloaded and converted to markdown.
-   If you want to download additional specifications modify below two parameters in `3gpp_extraction.py`:
-    ```python
-    # Add more releases as needed
-    RELEASES = ["Rel-15", "Rel-16", "Rel-17", "Rel-18"]
-    # Add more series as needed
-    SERIES = ["38_series"]
-    ```
-   Then run:
-
-   ```bash
-   pip install -r requirements.txt
-   python3 3gpp_extraction.py
-   ```
-   This will download, extract, and convert 3GPP specs to markdown in `spec_md/`.
-
-3. **Install Ollama and Download Models:**
+2. **Install Ollama and Download Models:**
    ```bash
    curl -fsSL https://ollama.com/install.sh | sh
    ollama pull mistral
@@ -62,30 +45,54 @@ Specpilot is an AI-powered assistant for 3GPP specification, combining two main 
    # You can use other Ollama models as well. See https://ollama.com/library for available models.
    ```
 
-4. (Optional) Configure environment variables in `.env` as needed.
+---
+
+## 3GPP Specification Extraction (Python Script)
+
+Currently, the repository contains 38 series specifications from Release 15-18 already downloaded and converted to markdown.
+
+If you want to download additional specifications modify below two parameters in `3gpp_extraction.py`:
+
+```python
+# Add more releases as needed
+RELEASES = ["Rel-15", "Rel-16", "Rel-17", "Rel-18"]
+# Add more series as needed
+SERIES = ["38_series"]
+```
+
+Then run:
+
+```bash
+pip install -r requirements.txt
+python3 3gpp_extraction.py
+```
+
+This will download, extract, and convert 3GPP specs to markdown in `spec_md/`.
 
 ---
 
-## Deployment (AnythingLLM)
+## Deployment of ChatGPT-like Features (Ollama + AnythingLLM)
 
-### Using Docker Compose
-1. Run Ollama:
+1. (Optional) Configure environment variables in `.env` as needed.
+
+2. Run Ollama:
+
+   **Note:** If Ollama is already running, you can skip this step.
    ```bash
    ollama serve mistral
    # Replace 'mistral' with any other model you have pulled if desired.
    ```
    Visit http://localhost:11434 to verify Ollama is running.
 
-2. Ensure Docker and Docker Compose are installed.
+3. Ensure Docker and Docker Compose are installed.
 
-3. Start AnythingLLM:
+4. Start AnythingLLM:
    ```bash
    source .env
    docker-compose up -d
    ```
-   This will launch the AnythingLLM service using host networking and mount the storage directory.
 
-4. Access the AnythingLLM UI (http://localhost:3001) at the configured port on local machine (default: 3001).
+5. Access the UI at http://localhost:3001.
 
 ---
 
