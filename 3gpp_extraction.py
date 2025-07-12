@@ -61,8 +61,9 @@ def unzip_and_convert(zip_path, zip_extract_dir, md_file_dir):
             md_file_path = os.path.join(md_file_dir, file.rsplit('.', 1)[0] + ".md")
             convert_to_md(doc_path, md_file_path)
 
-    # Clean up extracted files
+    # Clean up extracted files and zip file
     shutil.rmtree(zip_extract_dir)
+    os.remove(zip_path)
 
 
 def download_file(url, save_path):
