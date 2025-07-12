@@ -80,6 +80,7 @@ Specpilot is an AI-powered assistant for 3GPP specification, combining two main 
 
 3. Start AnythingLLM:
    ```bash
+   source .env
    docker-compose up -d
    ```
    This will launch the AnythingLLM service using host networking and mount the storage directory.
