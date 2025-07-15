@@ -4,8 +4,12 @@ services:
     container_name: specpilot
     cap_add:
       - SYS_ADMIN
+      - NET_ADMIN
+    privileged: true
     env_file:
       - .env
+    expose:
+      - ${SERVER_PORT}
     volumes:
       - storage:${STORAGE_DIR}
     restart: always

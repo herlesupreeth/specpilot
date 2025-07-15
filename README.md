@@ -36,6 +36,7 @@ This repository aims to provide the tools to deploy an AI-powered assistant for 
    ```bash
    git clone https://github.com/herlesupreeth/specpilot.git
    cd specpilot
+   mkdir -p llm_storage
    ```
 
 2. **Install Ollama and Download Models:**
@@ -65,6 +66,8 @@ Then run:
 
 ```bash
 sudo apt-get install -y pandoc
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 python3 3gpp_extraction.py
 ```
@@ -111,3 +114,38 @@ Pull requests and issues are welcome! Please see the LICENSE for details.
 
 ## License
 BSD 2-Clause License
+
+---
+
+## Troubleshooting
+
+### Common Issues
+
+- **Ollama not running:**  
+   Ensure Ollama is installed and the model is served. Run `ollama serve <model>` and check http://localhost:11434.
+
+- **Ollama model not found:**  
+   Make sure you have pulled the model using `ollama pull <model_name>`. Check available models with `ollama list`.
+
+- **Ollama not accessible:**  
+   If Ollama is running but not accessible, check if the port (default 11434) is blocked by a firewall or if Ollama is configured to use a different port. To allow access in firewall run `sudo ufw allow 11434`.
+
+- **Docker Compose errors:**  
+   Verify Docker and Docker Compose are installed and running. Use `docker --version` and `docker-compose --version` to check.
+
+- **Missing Python dependencies:**  
+   Run `pip install -r requirements.txt` to install required packages.
+
+- **Pandoc not found:**  
+   Install Pandoc with `sudo apt-get install -y pandoc`.
+
+- **Specs not downloading:**  
+   Check your internet connection and verify the `RELEASES` and `SERIES` parameters in `3gpp_extraction.py`.
+
+- **UI not accessible:**  
+   Ensure Docker is running and the container is up. Check logs with `docker-compose logs` for any errors. Ensure `SERVER_PORT` in `.env` is open and not blocked by firewall. To allow access in firewall run `sudo ufw allow ${SERVER_PORT}`.
+
+- **Port conflicts:**  
+   If the specified ports are already in use, change the `SERVER_PORT` in `.env` and redeploy.
+
+If encounter other issues, please open an issue in the repository with error details.
