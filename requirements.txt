@@ -1,2 +1,4 @@
 requests
 bs4
+docling
+easyocr
