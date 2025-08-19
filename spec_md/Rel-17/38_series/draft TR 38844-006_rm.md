@@ -1,186 +1,94 @@
-+----------------------------------+----------------------------------+
-| 3GPP TR 38.844 V0.0.5 (2021-11)  |                                  |
-+==================================+==================================+
-| Technical Report                 |                                  |
-+----------------------------------+----------------------------------+
-| 3rd Generation Partnership       |                                  |
-| Project;                         |                                  |
-|                                  |                                  |
-| Technical Specification Group    |                                  |
-| Radio Access Network;            |                                  |
-|                                  |                                  |
-| NR;                              |                                  |
-|                                  |                                  |
-| Study on Efficient utilization   |                                  |
-| of licensed spectrum that is not |                                  |
-| aligned with existing NR channel |                                  |
-| bandwidths                       |                                  |
-|                                  |                                  |
-| (Release 17)                     |                                  |
-+----------------------------------+----------------------------------+
-|                                  |                                  |
-+----------------------------------+----------------------------------+
-| ![](./media/image1.jp            | ![](./media/image2.p             |
-| eg){width="1.3229166666666667in" | ng){width="1.7708333333333333in" |
-| height="0.9166666666666666in"}   | height="1.0416666666666667in"}   |
-+----------------------------------+----------------------------------+
-|                                  |                                  |
-+----------------------------------+----------------------------------+
-| The present document has been    |                                  |
-| developed within the 3rd         |                                  |
-| Generation Partnership Project   |                                  |
-| (3GPP ^TM^) and may be further   |                                  |
-| elaborated for the purposes of   |                                  |
-| 3GPP.\                           |                                  |
-| The present document has not     |                                  |
-| been subject to any approval     |                                  |
-| process by the 3GPP              |                                  |
-| Organizational Partners and      |                                  |
-| shall not be implemented.\       |                                  |
-| This Specification is provided   |                                  |
-| for future development work      |                                  |
-| within 3GPP only. The            |                                  |
-| Organizational Partners accept   |                                  |
-| no liability for any use of this |                                  |
-| Specification.\                  |                                  |
-| Specifications and Reports for   |                                  |
-| implementation of the 3GPP ^TM^  |                                  |
-| system should be obtained via    |                                  |
-| the 3GPP Organizational          |                                  |
-| Partners\' Publications Offices. |                                  |
-+----------------------------------+----------------------------------+
+| 3GPP TR 38.844 V0.0.5 (2021-11)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | 3GPP TR 38.844 V0.0.5 (2021-11)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Technical Report                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Technical Report                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| 3rd Generation Partnership Project; Technical Specification Group Radio Access Network; NR; Study on Efficient utilization of licensed spectrum that is not aligned with existing NR channel bandwidths  (Release 17)                                                                                                                                                                                                                                                                                                                                                                                          | 3rd Generation Partnership Project; Technical Specification Group Radio Access Network; NR; Study on Efficient utilization of licensed spectrum that is not aligned with existing NR channel bandwidths  (Release 17)                                                                                                                                                                                                                                                                                                                                                                                          |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| The present document has been developed within the 3rd Generation Partnership Project (3GPP TM) and may be further elaborated for the purposes of 3GPP. The present document has not been subject to any approval process by the 3GPP Organizational Partners and shall not be implemented. This Specification is provided for future development work within 3GPP only. The Organizational Partners accept no liability for any use of this Specification. Specifications and Reports for implementation of the 3GPP TM system should be obtained via the 3GPP Organizational Partners' Publications Offices. | The present document has been developed within the 3rd Generation Partnership Project (3GPP TM) and may be further elaborated for the purposes of 3GPP. The present document has not been subject to any approval process by the 3GPP Organizational Partners and shall not be implemented. This Specification is provided for future development work within 3GPP only. The Organizational Partners accept no liability for any use of this Specification. Specifications and Reports for implementation of the 3GPP TM system should be obtained via the 3GPP Organizational Partners' Publications Offices. |
 
-+----------------------------------------------------------------------+
-|                                                                      |
-+======================================================================+
-| > ***3GPP***                                                         |
-| >                                                                    |
-| > Postal address                                                     |
-| >                                                                    |
-| > 3GPP support office address                                        |
-| >                                                                    |
-| > 650 Route des Lucioles - Sophia Antipolis                          |
-| >                                                                    |
-| > Valbonne - FRANCE                                                  |
-| >                                                                    |
-| > Tel.: +33 4 92 94 42 00 Fax: +33 4 93 65 47 16                     |
-| >                                                                    |
-| > Internet                                                           |
-| >                                                                    |
-| > http://www.3gpp.org                                                |
-+----------------------------------------------------------------------+
-| ***Copyright Notification***                                         |
-|                                                                      |
-| No part may be reproduced except as authorized by written            |
-| permission.\                                                         |
-| The copyright and the foregoing restriction extend to reproduction   |
-| in all media.                                                        |
-|                                                                      |
-| © 2021, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, |
-| TTA, TTC).                                                           |
-|                                                                      |
-| All rights reserved.                                                 |
-|                                                                      |
-| UMTS™ is a Trade Mark of ETSI registered for the benefit of its      |
-| members                                                              |
-|                                                                      |
-| 3GPP™ is a Trade Mark of ETSI registered for the benefit of its      |
-| Members and of the 3GPP Organizational Partners\                     |
-| LTE™ is a Trade Mark of ETSI registered for the benefit of its       |
-| Members and of the 3GPP Organizational Partners                      |
-|                                                                      |
-| GSM® and the GSM logo are registered and owned by the GSM            |
-| Association                                                          |
-+----------------------------------------------------------------------+
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 3GPP Postal address  3GPP support office address 650 Route des Lucioles - Sophia Antipolis Valbonne - FRANCE Tel.: +33 4 92 94 42 00 Fax: +33 4 93 65 47 16 Internet http://www.3gpp.org                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Copyright Notification No part may be reproduced except as authorized by written permission. The copyright and the foregoing restriction extend to reproduction in all media.  © 2021, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved.  UMTS™ is a Trade Mark of ETSI registered for the benefit of its members 3GPP™ is a Trade Mark of ETSI registered for the benefit of its Members and of the 3GPP Organizational Partners LTE™ is a Trade Mark of ETSI registered for the benefit of its Members and of the 3GPP Organizational Partners GSM® and the GSM logo are registered and owned by the GSM Association |
 
- Contents {#contents .TT}
-========
+## Contents
 
-Foreword 5
+Foreword	5
 
-Introduction 6
+Introduction	6
 
-1 Scope 7
+1	Scope	7
 
-2 References 7
+2	References	7
 
-3 Definitions of terms, symbols and abbreviations 7
+3	Definitions of terms, symbols and abbreviations	7
 
-3.1 Terms 7
+3.1	Terms	7
 
-3.2 Symbols 7
+3.2	Symbols	7
 
-3.3 Abbreviations 8
+3.3	Abbreviations	8
 
-4 Examples for Styles 8
+4	Examples for Styles	8
 
-4.1 Heading Styles 8
+4.1	Heading Styles	8
 
-4.2 Other common styles 8
+4.2	Other common styles	8
 
-\"TSG \<Name\>\" on the front page 9
+"TSG &lt;Name&gt;" on the front page	9
 
-Page setup parameters 9
+Page setup parameters	9
 
-Proforma copyright release text block 11
+Proforma copyright release text block	11
 
-X.1 The right to copy 11
+X.1	The right to copy	11
 
-Abstract Test Suite (ATS) text block 12
+Abstract Test Suite (ATS) text block	12
 
-Y Abstract Test Suite (ATS) 12
+Y	Abstract Test Suite (ATS)	12
 
-Y.1 Introduction 12
+Y.1	Introduction	12
 
-Y.2 The TTCN Graphical form (TTCN.GR) 12
+Y.2	The TTCN Graphical form (TTCN.GR)	12
 
-Y.3 The TTCN Machine Processable form (TTCN.MP) 12
+Y.3	The TTCN Machine Processable form (TTCN.MP)	12
 
-Annex \<A\> (normative): \<Normative annex for a Technical
-Specification\> 13
+Annex &lt;A&gt; (normative): &lt;Normative annex for a Technical Specification&gt;	13
 
-Annex \<B\> (informative): \<Informative annex for a Technical
-Specification\> 14
+Annex &lt;B&gt; (informative): &lt;Informative annex for a Technical Specification&gt;	14
 
-B.1 Heading levels in an annex 14
+B.1	Heading levels in an annex	14
 
-Annex \<B\>: \<Informative annex title for a Technical Report\> 15
+Annex &lt;B&gt;: &lt;Informative annex title for a Technical Report&gt;	15
 
-Annex \<C\> (informative): Bibliography 16
+Annex &lt;C&gt; (informative): Bibliography	16
 
-Annex \<D\> (informative): Index 17
+Annex &lt;D&gt; (informative): Index	17
 
-Annex \<X\> (informative): Change history 18
+Annex &lt;X&gt; (informative): Change history	18
 
-Foreword
-========
+## Foreword
 
-This Technical Report has been produced by the 3rd Generation
-Partnership Project (3GPP).
+This Technical Report has been produced by the 3rd Generation Partnership Project (3GPP).
 
-The contents of the present document are subject to continuing work
-within the TSG and may change following formal TSG approval. Should the
-TSG modify the contents of the present document, it will be re-released
-by the TSG with an identifying change of release date and an increase in
-version number as follows:
+The contents of the present document are subject to continuing work within the TSG and may change following formal TSG approval. Should the TSG modify the contents of the present document, it will be re-released by the TSG with an identifying change of release date and an increase in version number as follows:
 
 Version x.y.z
 
 where:
 
-x the first digit:
+x	the first digit:
 
-1 presented to TSG for information;
+1	presented to TSG for information;
 
-2 presented to TSG for approval;
+2	presented to TSG for approval;
 
-3 or greater indicates TSG approved document under change control.
+3	or greater indicates TSG approved document under change control.
 
-y the second digit is incremented for all changes of substance, i.e.
-technical enhancements, corrections, updates, etc.
+y	the second digit is incremented for all changes of substance, i.e. technical enhancements, corrections, updates, etc.
 
-z the third digit is incremented when editorial only changes have been
-incorporated in the document.
+z	the third digit is incremented when editorial only changes have been incorporated in the document.
 
 In the present document, modal verbs have the following meanings:
 
@@ -188,15 +96,9 @@ In the present document, modal verbs have the following meanings:
 
 **shall not** indicates an interdiction (prohibition) to do something
 
-The constructions \"shall\" and \"shall not\" are confined to the
-context of normative provisions, and do not appear in Technical Reports.
+The constructions "shall" and "shall not" are confined to the context of normative provisions, and do not appear in Technical Reports.
 
-The constructions \"must\" and \"must not\" are not used as substitutes
-for \"shall\" and \"shall not\". Their use is avoided insofar as
-possible, and they are not used in a normative context except in a
-direct citation from an external, referenced, non-3GPP document, or so
-as to maintain continuity of style when extending or modifying the
-provisions of such a referenced document.
+The constructions "must" and "must not" are not used as substitutes for "shall" and "shall not". Their use is avoided insofar as possible, and they are not used in a normative context except in a direct citation from an external, referenced, non-3GPP document, or so as to maintain continuity of style when extending or modifying the provisions of such a referenced document.
 
 **should** indicates a recommendation to do something
 
@@ -206,1615 +108,608 @@ provisions of such a referenced document.
 
 **need not** indicates permission not to do something
 
-The construction \"may not\" is ambiguous and is not used in normative
-elements. The unambiguous constructions \"might not\" or \"shall not\"
-are used instead, depending upon the meaning intended.
+The construction "may not" is ambiguous and is not used in normative elements. The unambiguous constructions "might not" or "shall not" are used instead, depending upon the meaning intended.
 
 **can** indicates that something is possible
 
 **cannot** indicates that something is impossible
 
-The constructions \"can\" and \"cannot\" are not substitutes for \"may\"
-and \"need not\".
+The constructions "can" and "cannot" are not substitutes for "may" and "need not".
 
-**will** indicates that something is certain or expected to happen as a
-result of action taken by an agency the behaviour of which is outside
-the scope of the present document
+**will** indicates that something is certain or expected to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document
 
-**will not** indicates that something is certain or expected not to
-happen as a result of action taken by an agency the behaviour of which
-is outside the scope of the present document
+**will not** indicates that something is certain or expected not to happen as a result of action taken by an agency the behaviour of which is outside the scope of the present document
 
-**might** indicates a likelihood that something will happen as a result
-of action taken by some agency the behaviour of which is outside the
-scope of the present document
+**might** indicates a likelihood that something will happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document
 
-**might not** indicates a likelihood that something will not happen as a
-result of action taken by some agency the behaviour of which is outside
-the scope of the present document
+**might not** indicates a likelihood that something will not happen as a result of action taken by some agency the behaviour of which is outside the scope of the present document
 
 In addition:
 
-**is** (or any other verb in the indicative mood) indicates a statement
-of fact
+**is** (or any other verb in the indicative mood) indicates a statement of fact
 
-**is not** (or any other negative verb in the indicative mood) indicates
-a statement of fact
+**is not** (or any other negative verb in the indicative mood) indicates a statement of fact
 
-The constructions \"is\" and \"is not\" do not indicate requirements.
+The constructions "is" and "is not" do not indicate requirements.
 
-Introduction
-============
+## Introduction
 
-One of the aims of 5G is providing bandwidth flexibility. Although this
-is achieved in general, but for some spectrum allocations the ability to
-achieve such flexibility needs further study.
+One of the aims of 5G is providing bandwidth flexibility. Although this is achieved in general, but for some spectrum allocations the ability to achieve such flexibility needs further study.
 
- 1 Scope
-=======
+## 1	Scope
 
-The present document is the Technical Report of the Study Item on
-Efficient utilization of licensed spectrum that is not aligned with
-existing NR channel bandwidths, approved at TSG RAN \#89-e \[2\]. The
-purpose of this document is to capture and document the outcome of the
-objectives stated in the SID.
+The present document is the Technical Report of the Study Item on Efficient utilization of licensed spectrum that is not aligned with existing NR channel bandwidths, approved at TSG RAN #89-e [2]. The purpose of this document is to capture and document the outcome of the objectives stated in the SID.
 
-2 References
-============
+## 2	References
 
-The following documents contain provisions which, through reference in
-this text, constitute provisions of the present document.
+The following documents contain provisions which, through reference in this text, constitute provisions of the present document.
 
-\- References are either specific (identified by date of publication,
-edition number, version number, etc.) or non‑specific.
+-	References are either specific (identified by date of publication, edition number, version number, etc.) or non-specific.
 
-\- For a specific reference, subsequent revisions do not apply.
+-	For a specific reference, subsequent revisions do not apply.
 
-\- For a non-specific reference, the latest version applies. In the case
-of a reference to a 3GPP document (including a GSM document), a
-non-specific reference implicitly refers to the latest version of that
-document *in the same Release as the present document*.
+-	For a non-specific reference, the latest version applies. In the case of a reference to a 3GPP document (including a GSM document), a non-specific reference implicitly refers to the latest version of that document *in the same Release as the present document* .
 
-\[1\] 3GPP TR 21.905: \"Vocabulary for 3GPP Specifications\".
+[1]	3GPP TR 21.905: "Vocabulary for 3GPP Specifications".
 
-\[2\] RP-202103: SID "Study on Efficient utilization of licensed
-spectrum that is not aligned with existing NR channel bandwidths"
+[2]	RP-202103: SID “Study on Efficient utilization of licensed spectrum that is not aligned with existing NR channel bandwidths”
 
-3 Definitions of terms, symbols and abbreviations
-=================================================
+## 3	Definitions of terms, symbols and abbreviations
 
-3.1 Terms
----------
+### 3.1	Terms
 
-For the purposes of the present document, the terms given in 3GPP
-TR 21.905 \[1\] and the following apply. A term defined in the present
-document takes precedence over the definition of the same term, if any,
-in 3GPP TR 21.905 \[1\].
+For the purposes of the present document, the terms given in 3GPP TR 21.905 [1] and the following apply. A term defined in the present document takes precedence over the definition of the same term, if any, in 3GPP TR 21.905 [1].
 
-**Existing immediately lower regular channel bandwidth:** the closest NR
-channel bandwidth defined in Rel-17 which is smaller/less than the
-irregular bandwidth
+**Existing immediately lower regular channel bandwidth:** the closest NR channel bandwidth defined in Rel-17 which is smaller/less than the irregular bandwidth
 
-**Existing immediately wider regular channel bandwidth:** the closest NR
-channel bandwidth defined in Rel-17 which is larger/wider than the
-irregular bandwidth
+**Existing immediately wider regular channel bandwidth:** the closest NR channel bandwidth defined in Rel-17 which is larger/wider than the irregular bandwidth
 
-**Irregular bandwidth**: an NR bandwidth that is not defined in Rel-17
+**Irregular bandwidth** : an NR bandwidth that is not defined in Rel-17
 
-**Overlapping UE channel BW from network perspective:** network supports
-the irregular bandwidth (either by a single carrier or by two
-overlapping carriers) while each UE operates in an existing lower
-regular NR channel bandwidth
+**Overlapping UE channel BW from network perspective:** network supports the irregular bandwidth (either by a single carrier or by two overlapping carriers) while each UE operates in an existing lower regular NR channel bandwidth
 
-**Overlapping UE channel BW from UE perspective:** network supports the
-irregular bandwidth while some new UEs support two overlapping (RF)
-carriers
+**Overlapping UE channel BW from UE perspective:** network supports the irregular bandwidth while some new UEs support two overlapping (RF) carriers
 
-**Overlapping CA:** the irregular bandwidth is handled by two
-overlapping component carriers (CCs) with NR channel bandwidth defined
-in Rel-17. It is network responsibility to prevent collisions between
-the different component carriers.
+**Overlapping CA:** the irregular bandwidth is handled by two overlapping component carriers (CCs) with NR channel bandwidth defined in Rel-17. It is network responsibility to prevent collisions between the different component carriers.
 
-**Single BB carrier:** means that from baseband (RAN1) perspective,
-there is a single cell with a waveform according to a single carrier
+**Single BB carrier:** means that from baseband (RAN1) perspective, there is a single cell with a waveform according to a single carrier
 
-3.2 Symbols
------------
+### 3.2	Symbols
 
 For the purposes of the present document, the following symbols apply:
 
-\<symbol\> \<Explanation\>
+&lt;symbol&gt;	&lt;Explanation&gt;
 
-3.3 Abbreviations
------------------
+### 3.3	Abbreviations
 
-For the purposes of the present document, the abbreviations given in
-3GPP TR 21.905 \[1\] and the following apply. An abbreviation defined in
-the present document takes precedence over the definition of the same
-abbreviation, if any, in 3GPP TR 21.905 \[1\].
+For the purposes of the present document, the abbreviations given in 3GPP TR 21.905 [1] and the following apply. An abbreviation defined in the present document takes precedence over the definition of the same abbreviation, if any, in 3GPP TR 21.905 [1].
 
-ACLR Adjacent Channel Leakage Ratio
+ACLR	Adjacent Channel Leakage Ratio
 
-ACS Adjacent Channel Selectivity
+ACS	Adjacent Channel Selectivity
 
-BS Base Station
+BS	Base Station
 
-BW Bandwidth
+BW	Bandwidth
 
-CBW Channel Bandwidth
+CBW	Channel Bandwidth
 
-SCBW Smaller Channel Bandwidth (Existing immediate lower channel
-bandwidth)
+SCBW	Smaller Channel Bandwidth (Existing immediate lower channel bandwidth)
 
-FR1 Frequency Range 1
+FR1	Frequency Range 1
 
-RF Radio Frequency
+RF	Radio Frequency
 
-WCBW Wider Channel Bandwidth (Existing immediate wider channel
-bandwidth)
+WCBW	Wider Channel Bandwidth (Existing immediate wider channel bandwidth)
 
-UE User Equipment
+UE	User Equipment
 
-4 Background
-============
+## 4	Background
 
-One of the aims of 5G is providing bandwidth flexibility. Although this
-is achieved in general, but for some spectrum allocations the ability to
-achieve such flexibility needs further study.
+One of the aims of 5G is providing bandwidth flexibility.  Although this is achieved in general, but for some spectrum allocations the ability to achieve such flexibility needs further study.
 
-Solutions for the following spectrum allocations have been requested so
-far:
+Solutions for the following spectrum allocations have been requested so far:
 
-Table 4-1: Summary of operators' input for irregular channel bandwidth
+Table 4-1: Summary of operators’ input for irregular channel bandwidth
 
-  Band (s)   Channel Bandwidth(s)
-  ---------- ----------------------
-  n5         7, 11 MHz
-  n12, n85   6, 12 MHz
-  n26        7 MHz
-  n28        13 MHz
-  n29        6, 11 MHz
+| Band (s)   | Channel Bandwidth(s)   |
+|------------|------------------------|
+| n5         | 7, 11 MHz              |
+| n12, n85   | 6, 12 MHz              |
+| n26        | 7 MHz                  |
+| n28        | 13 MHz                 |
+| n29        | 6, 11 MHz              |
 
-Some techniques have been suggested for re-using existing channel
-bandwidths which can include but not limited to overlapping UE channel
-bandwidths, and/or using larger bandwidths than operator licensed
-bandwidth. This Study Item is needed to evaluate where existing
-techniques can be used to efficiently utilize operator spectrum
-allocations, and whether and how new channel bandwidths should be
-created. The Study shall also analyse if a proprietary solution(s) is
-sufficient.
+Some techniques have been suggested for re-using existing channel bandwidths which can include but not limited to overlapping UE channel bandwidths, and/or using larger bandwidths than operator licensed bandwidth. This Study Item is needed to evaluate where existing techniques can be used to efficiently utilize operator spectrum allocations, and whether and how new channel bandwidths should be created. The Study shall also analyse if a proprietary solution(s) is sufficient.
 
-4.1 Objectives
---------------
+### 4.1	Objectives
 
-The following objectives are listed in the SID \[2\]
+The following objectives are listed in the SID [2]
 
-1\) Identify operator licensed channel bandwidths in FR1 that do not
-align with existing NR channel bandwidths.
+1) Identify operator licensed channel bandwidths in FR1 that do not align with existing NR channel bandwidths.
 
-\- Only licensed spectrum wider than 5 MHz to be considered in this SID.
+- Only licensed spectrum wider than 5 MHz to be considered in this SID.
 
-\- Spectrum block of 33MHz in n28 require further investigation since
-there is dual duplexer assumption (2x30MHz) for this band.
+- Spectrum block of 33MHz in n28 require further investigation since there is dual duplexer assumption (2x30MHz) for this band.
 
-2\) Evaluate the potential use of larger channel bandwidths than
-operator licensed bandwidth, including the impacts on regulatory
-emission requirements/UE output power implications and UE ACS/blocking
-impacts depending on the guard band and the SCS.
+2) Evaluate the potential use of larger channel bandwidths than operator licensed bandwidth, including the impacts on regulatory emission requirements/UE output power implications and UE ACS/blocking impacts depending on the guard band and the SCS.
 
-3\) Study the use of overlapping UE channel bandwidths (from both UE and
-network perspective) to cover operator's license spectrum for both UL
-and DL, and if new gNB channel bandwidths are needed.
+3) Study the use of overlapping UE channel bandwidths (from both UE and network perspective) to cover operator’s license spectrum for both UL and DL, and if new gNB channel bandwidths are needed.
 
-NOTE: For all considered solutions, new (dedicated) channel filters
-(e.g. non-integer-multiples of 5MHz) are not considered for the UE and
-not prioritized for the gNB.
+NOTE:	For all considered solutions, new (dedicated) channel filters (e.g. non-integer-multiples of 5MHz) are not considered for the UE and not prioritized for the gNB.
 
-4\) Identify operator licensed bandwidths that are not compatible with
-the use of techniques like overlapping UE channel bandwidths. Every
-proposed method shall be summarized with respect to whether all
-considered spectrum scenarios are supported or whether there are
-specific limitations. Some limitations for a specific method shall not
-disqualify such method if there is a trade-off between flexibility and
-implementation challenges.
+4) Identify operator licensed bandwidths that are not compatible with the use of techniques like overlapping UE channel bandwidths. Every proposed method shall be summarized with respect to whether all considered spectrum scenarios are supported or whether there are specific limitations. Some limitations for a specific method shall not disqualify such method if there is a trade-off between flexibility and implementation challenges.
 
-5\) Study the complexity and efficiency of adding new channel bandwidths
-vs. using other including testing aspects.
+5) Study the complexity and efficiency of adding new channel bandwidths vs. using other including testing aspects.
 
-6\) Generic solution(s) should be intended as much as possible, with
-priority should be given to approaches that avoid the introduction of
-new channel BWs on the UE side. Proprietary solutions if proven relevant
-should not be precluded. Spectrally efficient methods providing a fine
-channel bandwidth granularity as well as low to moderate guard band
-width and signalling overhead should be preferred
+6) Generic solution(s) should be intended as much as possible, with priority should be given to approaches that avoid the introduction of new channel BWs on the UE side. Proprietary solutions if proven relevant should not be precluded. Spectrally efficient methods providing a fine channel bandwidth granularity as well as low to moderate guard band width and signalling overhead should be preferred
 
-7\) Impact on RAN1 and RAN2 should be considered and minimized
+7) Impact on RAN1 and RAN2 should be considered and minimized
 
-8\) For any considered solution, UEs not supporting such solution (both
-legacy and new UEs) should be able to use the next lower supported
-channel bandwidth in the UL and DL without implications.
+8) For any considered solution, UEs not supporting such solution (both legacy and new UEs) should be able to use the next lower supported channel bandwidth in the UL and DL without implications.
 
-9\) Impact (if any) on RAN4 requirements should be identified for the
-preferred solutions.
+9) Impact (if any) on RAN4 requirements should be identified for the preferred solutions.
 
-5 General
-=========
+## 5	General
 
-5.1 UE channel bandwidth
-------------------------
+### 5.1	UE channel bandwidth
 
 The following text is copied from TS38.101-1 for information:
 
-The UE channel bandwidth supports a single NR RF carrier in the uplink
-or downlink at the UE. From a BS perspective, different UE channel
-bandwidths may be supported within the same spectrum for transmitting to
-and receiving from UEs connected to the BS. Transmission of multiple
-carriers to the same UE (CA) or multiple carriers to different UEs
-within the BS channel bandwidth can be supported.
+The UE channel bandwidth supports a single NR RF carrier in the uplink or downlink at the UE. From a BS perspective, different UE channel bandwidths may be supported within the same spectrum for transmitting to and receiving from UEs connected to the BS. Transmission of multiple carriers to the same UE (CA) or multiple carriers to different UEs within the BS channel bandwidth can be supported.
 
-From a UE perspective, the UE is configured with one or more BWP /
-carriers, each with its own UE channel bandwidth. The UE does not need
-to be aware of the BS channel bandwidth or how the BS allocates
-bandwidth to different UEs.
+From a UE perspective, the UE is configured with one or more BWP / carriers, each with its own UE channel bandwidth. The UE does not need to be aware of the BS channel bandwidth or how the BS allocates bandwidth to different UEs.
 
-The placement of the UE channel bandwidth for each UE carrier is
-flexible but can only be completely within the BS channel bandwidth.
+The placement of the UE channel bandwidth for each UE carrier is flexible but can only be completely within the BS channel bandwidth.
 
-6 Result, Analysis outcome
-==========================
+## 6	Result, Analysis outcome
 
-6.1 Study of larger Channel BW than licensed BW
------------------------------------------------
+### 6.1	Study of larger Channel BW than licensed BW
 
-### 6.1.1 General Aspects
+#### 6.1.1	General Aspects
 
-This clause describes, in general terms, how to utilize an irregular
-Channel Bandwidth by deploying the "larger channel Bandwidth" method.
+This clause describes, in general terms, how to utilize an irregular Channel Bandwidth by deploying the “larger channel Bandwidth” method.
 
-The premise idea is that the system is configured with the larger
-channel bandwidth, as indicated in the broadcast System Information, ,
-but the actual number of scheduled RBs is restricted so that it matches
-actual spectrum allocation ensuring sufficiently large guard bands.
+The premise idea is that the system is configured with the larger channel bandwidth, but the actual number of scheduled RBs is restricted so that it matches actual spectrum allocation ensuring sufficiently large guard bands.
 
-![](./media/image3.emf){width="1.4305555555555556in"
-height="0.7777777777777778in"}
+<!-- 🖼️❌ Image not available. Please use `PdfPipelineOptions(generate_picture_images=True)` -->
 
-**Figure 6.1.1-1: Using the next larger channel bandwidth (example for
-7MHz).**
+**Figure 6.1.1-1: Using the next larger channel bandwidth (example for 7MHz).**
 
-NOTE: It should be checked further whether it is possible to configure
-the next larger channel so that it goes over the band edge and which
-implications it has.
+One of the first aspects for this approach is the size of guard bands and the anticipated number of schedulable RBs. or the standard channel bandwidths, both values are captured in the corresponding specification to avoid any misinterpretation on how many RBs can be configured and scheduled. Following the same principle for every irregular channel bandwidth feasible, but  create same amount of technical specification work as if the corresponding irregular channel bandwidth were explicitly added to the specifications. Thus, the number of "available" RBs can be calculated based on certain assumptions.
 
-One of the first aspects for this approach is the size of guard bands
-and the anticipated number of schedulable RBs. For the standard channel
-bandwidths, both values are captured in the corresponding specification
-to avoid any misinterpretation on how many RBs can be configured and
-scheduled. Following the same principle for every irregular channel
-bandwidth would be feasible, but would create the same amount of
-technical specification work as if the corresponding irregular channel
-bandwidth were explicitly added to the specifications. Thus, the number
-of \"available\" RBs can be calculated based on certain assumptions.
+The maximum number of "available" or "schedulable" RBs for a particular irregular channel bandwidth can be calculated based on the assumption of using larger guard bands from the next *larger* channel bandwidth. As an example, while considering the 7MHz channel bandwidth,  next larger 10MHz channel guard bands, from which number of available RBs can be calculated.
 
-The maximum number of \"available\" or \"schedulable\" RBs for a
-particular irregular channel bandwidth can be calculated based on the
-assumption of using larger guard bands from the next *larger* channel
-bandwidth. As an example, while considering the 7MHz channel bandwidth,
-the assumption is to consider next larger 10MHz channel guard bands at
-both ends, from which number of available RBs can be calculated.
+NOTE:	Since a UE will be configured with the channel bandwidth, which is larger than the actual allocation, and it is not expected to provide the usual stop-band attenuation at the edges of the irregular channel bandwidth, it is necessary to verify the level of potential degradation of ACS/blocking.
 
-NOTE: Since a UE will be configured with the channel bandwidth, which is
-larger than the actual allocation, and it is not expected to provide the
-usual stop-band attenuation at the edges of the irregular channel
-bandwidth, it is necessary to verify the level of potential degradation
-of ACS/blocking. Sub-clause 6.1.3 provides further information on UE
-filters and potential performance.
+Similarly, the gNB operating with wider channel filters cannot be expected to provide stop-band attenuation at the edges of the irregular channel bandwidth to guarantee the co-existence. Further information on gNB transmit channel filters and ACS/blocking should be provided to assess resulting performance degradation and the gap to the RF performance requirements. The gNB Tx transmitter filter assumption is FFS.
 
-NOTE: Similarly, the gNB operating with wider channel filters cannot be
-expected to provide stop-band attenuation at the edges of the irregular
-channel bandwidth to guarantee the co-existence. Further information on
-gNB transmit channel filters and ACS/blocking should be provided to
-assess resulting performance degradation and the gap to the RF
-performance requirements. The gNB Tx transmitter filter assumption is
-FFS.
+Table 6.1.1-1 below presents example maximum number of available RBs for different irregular channel bandwidths considered in this study item.
 
-Table 6.1.1-1 below presents example maximum number of available RBs for
-different irregular channel bandwidths considered in this study item.
+NOTE:	Number of available RBs and spectral utilisation are taken from R4-2112365. The gNB transmitter filter assumption used to derive the RB numbers is FFS.
 
-NOTE: Number of available RBs and spectral utilisation are taken from
-R4-2112365. The gNB transmitter filter assumption used to derive the RB
-numbers is FFS.
+Table 6.1.1-1: Exemplary number of RBs based on the next larger channel guard bands (15kHz SCS).
 
-Table 6.1.1-1: Exemplary number of RBs based on the next larger channel
-guard bands (15kHz SCS).
+|   Channel (MHz) |   Next larger channel (MHz) | Next larger channel guard band (kHz)   |   Next larger channel  Nrb |   Channel Nrb | Utilisation (%)   |
+|-----------------|-----------------------------|----------------------------------------|----------------------------|---------------|-------------------|
+|               6 |                          10 | 312,5                                  |                         52 |            29 | 87                |
+|               7 |                          10 | 312,5                                  |                         52 |            35 | 90                |
+|              11 |                          15 | 382,5                                  |                         79 |            56 | 91,6              |
+|              12 |                          15 | 382,5                                  |                         79 |            62 | 93                |
+|              13 |                          15 | 382,5                                  |                         79 |            67 | 92,8              |
 
-+----------+----------+----------+----------+----------+----------+
-| Channel  | Next     | Next     | Next     | Channel  | Uti      |
-| (MHz)    | larger   | larger   | larger   | Nrb      | lisation |
-|          | channel  | channel  | channel  |          | (%)      |
-|          | (MHz)    | guard    |          |          |          |
-|          |          | band     | Nrb      |          |          |
-|          |          | (kHz)    |          |          |          |
-+==========+==========+==========+==========+==========+==========+
-| 6        | 10       | 312,5    | 52       | 29       | 87       |
-+----------+----------+----------+----------+----------+----------+
-| 7        | 10       | 312,5    | 52       | 35       | 90       |
-+----------+----------+----------+----------+----------+----------+
-| 11       | 15       | 382,5    | 79       | 56       | 91,6     |
-+----------+----------+----------+----------+----------+----------+
-| 12       | 15       | 382,5    | 79       | 62       | 93       |
-+----------+----------+----------+----------+----------+----------+
-| 13       | 15       | 382,5    | 79       | 67       | 92,8     |
-+----------+----------+----------+----------+----------+----------+
+Table 6.1.1-2 below presents similar calculations for 30kHz SCS, from which one can see that combination of 30kHz SCS and the next larger channel is not generally a good approach for small channel bandwidths. The main reason is that 30kHz SCS has much larger guard bands, which immediately impacts number of available RBs. As a small summary, assuming using guard band from the next larger channel the resulting spectrum Utilization would range from 87 to 92.8% for an SCS of 15kHz and 72 to 88.6% for an SCS of 30kHz.
 
-Table 6.1.1-2 below presents similar calculations for 30kHz SCS, from
-which one can see that combination of 30kHz SCS and the next larger
-channel is not generally a good approach for small channel bandwidths.
-The main reason is that 30kHz SCS has much larger guard bands, which
-immediately impacts number of available RBs. As a small summary,
-assuming using guard band from the next larger channel the resulting
-spectrum Utilization would range from 87 to 92.8% for an SCS of 15kHz
-and 72 to 88.6% for an SCS of 30kHz.
+NOTE:	Number of available RBs and spectral utilisation are taken from R4-2112365. The gNB transmitter filter assumption used to derive the RB numbers is FFS.
 
-NOTE: Number of available RBs and spectral utilisation are taken from
-R4-2112365. The gNB transmitter filter assumption used to derive the RB
-numbers is FFS.
+Table 6.1.1-2: Exemplary number of RBs based on the next larger channel guard bands (30kHz SCS).
 
-Table 6.1.1-2: Exemplary number of RBs based on the next larger channel
-guard bands (30kHz SCS).
+|   Channel (MHz) |   Next larger channel (MHz) |   Next larger channel guard band (kHz) |   Next larger channel Nrb |   Channel Nrb | Utilisation (%)   |
+|-----------------|-----------------------------|----------------------------------------|---------------------------|---------------|-------------------|
+|               6 |                          10 |                                    665 |                        24 |            12 | 72                |
+|               7 |                          10 |                                    665 |                        24 |            15 | 77,1              |
+|              11 |                          15 |                                    645 |                        38 |            26 | 85,1              |
+|              12 |                          15 |                                    645 |                        38 |            29 | 87                |
+|              13 |                          15 |                                    645 |                        38 |            32 | 88,6              |
 
-  Channel (MHz)   Next larger channel (MHz)   Next larger channel guard band (kHz)   Next larger channel Nrb   Channel Nrb   Utilisation (%)
-  --------------- --------------------------- -------------------------------------- ------------------------- ------------- -----------------
-  6               10                          665                                    24                        12            72
-  7               10                          665                                    24                        15            77,1
-  11              15                          645                                    38                        26            85,1
-  12              15                          645                                    38                        29            87
-  13              15                          645                                    38                        32            88,6
+#### 
 
-### 
+#### 6.1.2	Signalling and configuration aspects
 
-### 6.1.2 Signalling and configuration aspects
+In this section we provide further signaling details on how to support irregular channels given the 7MHz allocation as an example.
 
-In this section we provide further signaling details on how to support
-irregular channels given the 7MHz allocation as an example.
+The gNB broadcasts the DL carrier bandwidth and the bandwidth of the initial BWP (BWP#0) in SIB1. For the 7MHz allocation, SIB1 can indicate DL next larger standard channel bandwidth, i.e. 10 MHz, and that the initial DL BWP can be set to 5 MHz:
 
-The gNB broadcasts the DL carrier bandwidth and the bandwidth of the
-initial BWP (BWP\#0) in SIB1. For the 7MHz allocation, SIB1 can indicate
-DL next larger standard channel bandwidth, i.e. 10 MHz, and that the
-initial DL BWP can be set to 5 MHz:
+-	SIB1-&gt; servingCellConfigCommon-&gt; downlinkConfigCommon-&gt; frequencyInfoDL-&gt; scs-SpecificCarrierList-&gt; carrierBandwidth = 52 PRBs / subcarrierSpacing = 15 kHz
 
-\- SIB1-\> servingCellConfigCommon-\> downlinkConfigCommon-\>
-frequencyInfoDL-\> scs-SpecificCarrierList-\> carrierBandwidth = 52 PRBs
-/ subcarrierSpacing = 15 kHz
+-	SIB1-&gt; servingCellConfigCommon-&gt; downlinkConfigCommon-&gt; initialDownlinkBWP-&gt; genericParameters-&gt; locationAndBandwidth = 25 PRBs
 
-\- SIB1-\> servingCellConfigCommon-\> downlinkConfigCommon-\>
-initialDownlinkBWP-\> genericParameters-\> locationAndBandwidth = 25
-PRBs
+Once the UE established the RRC connection, the gNB can account for the UE capabilities and re-configure the UE accordingly. At this point the gNB may override the carrier bandwidth value that the UE obtained from SIB1 and configure a dedicated BWP with a bandwidth that differs from the bandwidth of BWP#0. gNB may configure a larger bandwidth part that will cover the whole 7MHz allocation.
 
-Once the UE established the RRC connection, the gNB can account for the
-UE capabilities and re-configure the UE accordingly. At this point the
-gNB may override the carrier bandwidth value that the UE obtained from
-SIB1 and configure a dedicated BWP with a bandwidth that differs from
-the bandwidth of BWP\#0. gNB may configure a larger bandwidth part that
-will cover the whole 7MHz allocation.
+-	ServingCellConfig-&gt; downlinkChannelBW-PerSCS-List-&gt; carrierBandwidth = 52 PRBs, subcarrierSpacing = 15 kHz
 
-\- ServingCellConfig-\> downlinkChannelBW-PerSCS-List-\>
-carrierBandwidth = 52 PRBs, subcarrierSpacing = 15 kHz
+-	ServingCellConfig-&gt; downlinkBWP-ToAddModList-&gt; bwp-Common-&gt; genericParameters-&gt; locationAndBandwidth = TBD PRBs
 
-\- ServingCellConfig-\> downlinkBWP-ToAddModList-\> bwp-Common-\>
-genericParameters-\> locationAndBandwidth = TBD PRBs
+#### 
 
-### 6.1.3 UE channel filters
+<!-- 🖼️❌ Image not available. Please use `PdfPipelineOptions(generate_picture_images=True)` -->
 
-A typical UE architecture utilises a number of filters of two major
-types -- analogue and digital -- and it is generally up to the UE
-implementation how they are combined. Nevertheless, it is often the case
-that a UE uses first the wideband analogue filter which typically covers
-a whole band. In addition to that, a UE may use another NR channel
-bandwidth specific analogue filter, premise function on which is to
-filter our non-adjacent blockers. However, since even the NR channel
-bandwidth specific analogue filter cannot ensure \"brick-wall\" like
-filtering, a UE also applies digital filter after ADC to eliminate
-adjacent blockers. Depending on the UE implementation, the digital
-filter is a combination of the hardware and software components that
-allow the UE to apply the corresponding filter coefficients to support a
-wide range of standard channels, e.g. from 5MHz to 100MHz in case of
-FR1.
+### 6.2	Study of overlapping UE channel bandwidths
 
-Sub-clause 6.1.2 provides the example in which the carrier bandwidth is
-10MHz / 52 RBs, but the actual allocation is limited to the smaller
-bandwidth through the corresponding signalling of the bandwidth part.
-Current specifications do not define how a UE configures its digital
-filter. So, in the provided example a UE implementation may configure
-the digital filter in accordance with the carrier bandwidth \"ignoring\"
-the actual bandwidth part size. This is illustrated further in Figure
-6.1.3-1 below the wanted signal is smaller than 10MHz, but the UE filter
-is always set to 10MHz as signalled by the network. As can be seen, if
-there an adjacent blocker, then it can \"leak\" into the wanted signal
-region.
+#### 6.2.1	Overlapping UE CBW
 
-![](./media/image4.emf){width="1.9430413385826772in"
-height="0.8554844706911636in"}
-![](./media/image5.emf){width="1.928571741032371in"
-height="0.9922364391951006in"}
-![](./media/image6.emf){width="1.6862095363079614in"
-height="0.9635487751531059in"}
+##### 6.2.1.1      General
 
-Figure 6.1.3-1: Possible scenarios for the 10MHz channel filter.
+One way to utilise the whole chunk of irregular spectrum of a particular size is to combine several overlapping channels of next lower standard channel bandwidth. As an example, Figure X-1 shows a case when two overlapping 10MHz carriers cover 13MHz channel bandwidth. From an individual UE perspective, each UE is configured with existing immediately lower channel bandwidth following legacy procedures and signalling: one UE can use the first 10MHz carrier, while another UE can use another carrier. In fact, both UEs can use overlapping part of the spectrum provided that the BS takes care that the overlapping region is allocated to one particular carrier at a time. It should be also noted that from the UE perspective, an existing immediately lower channel bandwidth will be always used, either for initial access (as the channel bandwidth advertised by the network) or as a dedicated channel bandwidth configured by RRC. From the network perspective, the BS will/can use the whole irregular channel bandwidth.
 
-6.2 Study of overlapping UE channel bandwidths
-----------------------------------------------
-
-### 6.2.1 Overlapping UE CBW 
-
-#### 6.2.1.1 General
-
-One way to utilise the whole chunk of irregular spectrum of a particular
-size is to combine several overlapping channels of next lower standard
-channel bandwidth. As an example, Figure X-1 shows a case when two
-overlapping 10MHz carriers cover 13MHz channel bandwidth. From an
-individual UE perspective, each UE is configured with existing
-immediately lower channel bandwidth following legacy procedures and
-signalling: one UE can use the first 10MHz carrier, while another UE can
-use another carrier. In fact, both UEs can use overlapping part of the
-spectrum provided that the BS takes care that the overlapping region is
-allocated to one particular carrier at a time. It should be also noted
-that from the UE perspective, an existing immediately lower channel
-bandwidth will be always used, either for initial access (as the channel
-bandwidth advertised by the network) or as a dedicated channel bandwidth
-configured by RRC. From the network perspective, the BS will/can use the
-whole irregular channel bandwidth.
-
-![](./media/image7.emf){width="1.5833333333333333in"
-height="1.1979166666666667in"}
+<!-- 🖼️❌ Image not available. Please use `PdfPipelineOptions(generate_picture_images=True)` -->
 
 **Figure 6.2.1.1-1: Using overlapping carriers (example for 13MHz).**
 
-It is worth noting that overall capacity of the cell will be according
-to the irregular channel bandwidth because the BS can use the full
-bandwidth. However, since a particular UE will use only one carrier of a
-smaller bandwidth within the irregular channel bandwidth, the maximum
-throughput for a single UE will be less than the theoretically possible
-within the spectrum in case there is only a single UE in the cell.
-Nevertheless, since there will be multiple UEs in the cell the overall
-system throughput will not decrease.
+It is worth noting that overall capacity of the cell will be according to the irregular channel bandwidth because the BS can use the full bandwidth. However, since a particular UE will use only one carrier of a smaller bandwidth within the irregular channel bandwidth, the maximum throughput for a single UE will be less than the theoretically possible within the spectrum in case there is only a single UE in the cell. Nevertheless, since there will be multiple UEs in the cell the overall system throughput will not decrease.
 
-#### 6.2.1.2 Detailed description
+##### 6.2.1.2      Detailed description
 
-One of the challenges associated with configuring overlapping carriers
-for the same frequency allocation is that both carriers should have
-aligned grid so that the BS can perform same FFT and schedule resources
-in the overlapping region.
+One of the challenges associated with configuring overlapping carriers for the same is that both carriers should have aligned grid so that the BS can perform same FFT and schedule resources in the overlapping region.
 
-While aligning RB grids is not an issue for bands above 3GHz that have
-the SCS based raster, it becomes more challenging for the sub-3GHz band
-that have 100kHz raster. As a result, carriers can be configured on
-raster points that correspond to the least common multiple of the
-channel raster and the RB size. As an example, the least common multiple
-will be 900kHz in case of the 15kHz SCS, which corresponds to 5RBs. It
-effectively means that overlapping carriers will not be able to address
-efficiently any irregular spectrum size and in some case maybe will not
-be applicable at all. Of course one way to improve spectrum utilisation
-is to allow shifting carriers in multiples of 1RB, but that will require
-introduction of new raster points, which will not be supported by legacy
-UEs.
+![Image](data:image/png;base64,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CPZTPB5PZ2f3woVXAQBqa2u3bNkCABgZcSaTqWuvveapp542my3V1VUej3fatOm5FXjgwIGKinKRSAQAOHbs+Jo1a8vLy/x+/969ex955JdHjx57//0PKisr4vH4pk2bHnjgAbFY9N//vlRYWJifb7DZbPv37//Rjx4IhUIkSfn9/mAw+MEHH/p8vpKSEofDsXnzlj/84fdDQ0Nr1qytra3dv39/c3NLfX09l8v56KNP7r77zmnTpr744kupVFKtVm/btm3atGk333xTVjcEQZLJxNDQsFAoTCQS27btnDx5EoZhtbW1R48eTyaTqVQqFApPnDips7O7p6d3woTxVqt18uQpsBeWa1ncbjefz0+lksPDw+FwhCSpEydaKYomSTIWi/F4vAcffHBUB7O6uurQocNOpys7zP+flJQUc7ncr1iY4awwhubM6XTqdLpzNneAIAhBEB988OGWLVtpmqYoSigUPvDA/8tuTAuHw9u27Vi2bNm8eXPD4fAf/vAoiqI2m23//gMPP/xQRUVFIpF49NHHDhw42N/fr9VqfvaznwIAVq5cNTLiQBCEzWaz2ZxwOLxly9af/OThurpao9H00ksvDw0Nz5kzu6amWiAQuN3uJ5/8q9k8vHDhVa2tJ6+99mqKot599737779v3LgmkiQfffSxlpYWsVjsdrv++Mc/SCSS5ubm559fmfuyOZ1ONpud22lCEESr1QIAEARNJBJvvPEmnAZCECQcDldXVwEAcBzv6en517/+DSMiQN89AIBOp0smU263e3h4SKVSqlQqmUxqs9n4fB5BEIWF+dmrQIfkqVOnAgAymcyGDRtmzLji+uuvSyaTf//7Pw4fbt68ecvSpYvnz59P0/Qzz/x769at119/HZvNnjlzxrx5c4PB4O9+9wefz79o0cL29vYlSxbrdLpp06ZVVlZIJJJIJPrb3/62t7ePy+Ww2RwEARRFFRUVPvzwQyiKrlix4uTJkwUF+Uaj8aGHflRdXW212gIBf+4cPIqiHo931aoXMQxLp9PRaBSO/QsKCgmCCIVCg4ODMpm0pKRYr9cZjaaKinKfz9/QUEdRFIqiLS1HvF4fTdM+n89kMt18842zZs0qKysLBAL33vu95uaW7u7u5ctvRxAEfgb27NmT+3SVlJSQJOHxuL+OOfsf06YMZ50xNGc7duy85Zabv8EsyZmB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)
 
-Figure 6.2.1.2-2 presents an example for the 6MHz channel comprising two
-5MHz channels. As can be seen from the figure, centre frequency distance
-between carriers is 900kHz, which is a multiple of 100kHz channel raster
-and 180kHz RB size. From an individual UE perspective, it is just a
-normal 5MHz carrier comprising 25RBs and having the 5MHz channel guard
-bands. From the BS perspective, it is a 6MHz channel with 30RBs. Figure
-6.2.1.2-3 exemplifies how this approach can be used to support the 7MHz
-irregular channel bandwidth, in which the distance between the carriers
-is 1800kHz. Finally, Figure 6.2.1.2-4 shows the 11MHz channel that is
-supported with two 10MHz channels.Referring to Figure 6.2.1.2-2,
-6.2.1.2-3 and 6.2.1.2-4, it should be noted that guard bands will not
-necessarily be symmetrical and the exact guard band size will depend on
-a particular spectrum allocation, its size, and how the overlapping
-channels are placed.
+aligning RB grids is not an issue for bands above 3GHz that have the SCS based raster, it becomes more challenging for the sub-3GHz band that have 100kHz raster. As a result, carriers can be configured on raster points that correspond to the least common multiple of the channel raster and the RB size. As an example, the least common multiple will be 900kHz in case of the 15kHz SCS, which corresponds to 5RBs. It effectively means that overlapping carriers will not be able to address efficiently any irregular spectrum size and in some case maybe will not be applicable at all. Of course one way to improve spectrum utilisation is to allow shifting carriers in multiples of 1RB, but that will require introduction of new raster points, which will not be supported by legacy UEs.
 
-![](./media/image9.emf){width="3.6666666666666665in" height="0.59375in"}
+Figure 6.2.1.2-2 presents an example for the 6MHz channel comprising two 5MHz channels. As can be seen from the figure, centre frequency distance between carriers is 900kHz, which is a multiple of 100kHz channel raster and 180kHz RB size. From an individual UE perspective, it is just a normal 5MHz carrier comprising 25RBs and having the 5MHz channel guard bands. From the BS perspective, it is a 6MHz channel with 30RBs. Figure 6.2.1.2-3 exemplifies how this approach can be used to support the 7MHz irregular channel bandwidth, in which the distance between the carriers is 1800kHz. Finally, Figure 6.2.1.2-4 shows the 11MHz channel that is supported with two 10MHz channels.Referring to Figure 6.2.1.2-2, 6.2.1.2-3 and 6.2.1.2-4, it should be noted that guard bands will not necessarily be symmetrical and the exact guard band size will depend on a particular spectrum allocation, its size, and how the overlapping channels are placed.
 
-**Figure 6.2.1.2-2: Detailed overview of overlapping carriers (6MHz
-channel with 5MHz carriers).**
+<!-- 🖼️❌ Image not available. Please use `PdfPipelineOptions(generate_picture_images=True)` -->
 
-![](./media/image10.emf){width="4.1875in" height="0.59375in"}
+**Figure 6.2.1.2-2: Detailed overview of overlapping carriers (6MHz channel with 5MHz carriers).**
 
-**Figure 6.2.1.2-3: Detailed overview of overlapping carriers (7MHz
-channel with 5MHz carriers).**
+<!-- 🖼️❌ Image not available. Please use `PdfPipelineOptions(generate_picture_images=True)` -->
 
-![](./media/image11.emf){width="6.697916666666667in"
-height="0.6145833333333334in"}**Figure 6.2.1.2-4: Detailed overview of
-overlapping carriers (11MHz channel with 10MHz carriers).**
+**Figure 6.2.1.2-3: Detailed overview of overlapping carriers (7MHz channel with 5MHz carriers).**
 
-Table 6.2.1.2-1 below summarises potential number of schedulable RBs for
-a scenario when the next smaller overlapping channels are used. To
-calculate them, it is assumed that distance between individual carriers
-is a multiple of 900kHz and that the resulting guard bands must meet at
-least next smaller channel requirements. So, \"Channel Nrb\", and
-\"Utilisation\" represent the network view, while from the UE
-perspective all the parameters are the same as for the next smaller
-channel.
+<!-- 🖼️❌ Image not available. Please use `PdfPipelineOptions(generate_picture_images=True)` -->
 
-**Table 6.2.1.2-1: Exemplary number of RBs based on the next smaller
-overlapping channel (15kHz SCS).**
+**Figure 6.2.1.2-4: Detailed overview of overlapping carriers (11MHz channel with 10MHz carriers).**
 
-  **Channel (MHz)**   **Next smaller channel (MHz)**   **Next smaller channel guard band (kHz)**   **Next smaller channel Nrb**   **Channel Nrb**   **Utilisation (%)**
-  ------------------- -------------------------------- ------------------------------------------- ------------------------------ ----------------- ---------------------
-  6                   5                                242,5                                       25                             30                90
-  7                   5                                242,5                                       25                             35                90
-  11                  10                               312,5                                       52                             57                93,3
-  12                  10                               312,5                                       52                             62                93
-  13                  10                               312,5                                       52                             67                92,8
+Table 6.2.1.2-1 below summarises potential number of schedulable RBs for a scenario when the next smaller overlapping channels are used. To calculate them, it is assumed that distance between individual carriers is a multiple of 900kHz and that the resulting guard bands must meet at least next smaller channel requirements. So, "Channel Nrb", and "Utilisation" represent the network view, while from the UE perspective all the parameters are the same as for the next smaller channel.
 
-Table 6.2.1.2-2 presents similar calculations for the number of
-available RBs with overlapping carriers, but for the 30kHz SCS. As can
-be seen from the table, a solution based on the 30kHz SCS overlapping
-carriers does not provide a good spectral utilisation for certain
-non-standard channel bandwidths due to the reason that the \"distance\"
-between carriers raster points must be a multiple of 1800kHz. Because of
-that, channel bandwidths such as 7 and 12MHz have more or less good
-utilisation, whereas 6 and 11MHz do not provide any benefit at all.
+**Table 6.2.1.2-1: Exemplary number of RBs based on the next smaller overlapping channel (15kHz SCS).**
 
-**Table 6.2.1.2-2: Exemplary number of RBs based on the next smaller
-overlapping channel (30kHz SCS).**
+|   Channel (MHz) |   Next smaller channel (MHz) | Next smaller channel guard band (kHz)   |   Next smaller channel Nrb |   Channel Nrb | Utilisation (%)   |
+|-----------------|------------------------------|-----------------------------------------|----------------------------|---------------|-------------------|
+|               6 |                            5 | 242,5                                   |                         25 |            30 | 90                |
+|               7 |                            5 | 242,5                                   |                         25 |            35 | 90                |
+|              11 |                           10 | 312,5                                   |                         52 |            57 | 93,3              |
+|              12 |                           10 | 312,5                                   |                         52 |            62 | 93                |
+|              13 |                           10 | 312,5                                   |                         52 |            67 | 92,8              |
 
-  **Channel (MHz)**   **Next smaller channel (MHz)**   **Next smaller channel guard band (kHz)**   **Next smaller channel Nrb**   **Channel Nrb**   **Utilisation (%)**
-  ------------------- -------------------------------- ------------------------------------------- ------------------------------ ----------------- ---------------------
-  6                   5                                505                                         11                             11                66
-  7                   5                                505                                         11                             16                82,3
-  11                  10                               665                                         24                             24                78,5
-  12                  10                               665                                         24                             29                87
-  13                  10                               665                                         24                             29                80,3
+Table 6.2.1.2-2 presents similar calculations for the number of available RBs with overlapping carriers, but for the 30kHz SCS. As can be seen from the table, a solution based on the 30kHz SCS overlapping carriers does not provide a good spectral utilisation for certain non-standard channel bandwidths due to the reason that the "distance" between carriers must be a multiple of 1800kHz. Because of that, channel bandwidths such as 7 and 12MHz have more or less good utilisation, whereas 6 and 11MHz do not provide any benefit at all.
 
-To suppport two overlapping carriers, the network can consider using one
-or two SSBs. To be more precise, since the the SSB bandwidth is 3.6MHz
-and the CORESET\#0 bandwidth is 4.32MHz, a single SSB/CORESET\#0 can be
-placed into a common part between two overlapping channels. However,
-this approach works only if the overlapping part is at least 4.32MHz,
-e.g. it is not applicable to 7MHz irregular channels. So, some irregular
-channel bandwidth will needed two SSB/CORESET\#0. In this case, at least
-for irregular channel bandwidths \<10MHz the network broadcasts two
-separate SSBs, one for each overlapping regular carrier. In case of
-irregular channels of a small size, e.g. less than 10MHz, it may create
-the challenge of aligning SSBs in the time and frequency domain so that
-they do not overlap thus complicating the gNB scheduling. i.e. for this
-approach complexity increases to coordinate the overlapping SSB for
-different UEs. As an example, if a particular irregular channel
-bandwidth does not allow for placing two SSBs in the same time slots,
-then the network will have two ensure that they are \"multiplexed\"
-accordingly in the time domain.
+**Table 6.2.1.2-2: Exemplary number of RBs based on the next smaller overlapping channel (30kHz SCS).**
 
-**Table 6.2.1.2-3: Summary of how many SSB/CORESET\#0 needed for
-different channel bandwidths.**
+|   Channel (MHz) |   Next smaller channel (MHz) |   Next smaller channel guard band (kHz) |   Next smaller channel Nrb |   Channel Nrb | Utilisation (%)   |
+|-----------------|------------------------------|-----------------------------------------|----------------------------|---------------|-------------------|
+|               6 |                            5 |                                     505 |                         11 |            11 | 66                |
+|               7 |                            5 |                                     505 |                         11 |            16 | 82,3              |
+|              11 |                           10 |                                     665 |                         24 |            24 | 78,5              |
+|              12 |                           10 |                                     665 |                         24 |            29 | 87                |
+|              13 |                           10 |                                     665 |                         24 |            29 | 80,3              |
 
-  **Channel (MHz)**   **Number of SSB/CORESET\#0**   **Time multiplexing for 2 SSBs is needed**
-  ------------------- ------------------------------ --------------------------------------------
-  6                   2                              yes
-  7                   2                              yes
-  11                  1 or 2                         no
-  12                  1 or 2                         no
-  13                  1 or 2                         no
+To suppport two overlapping carriers, the network can consider using one or two SSBs. To be more precise, since the the SSB bandwidth is 3.6MHz and the CORESET#0 bandwidth is 4.32MHz, a single SSB/CORESET#0 can be placed into a common part between two overlapping channels. However, this approach works only if the overlapping part is at least 4.32MHz, e.g. it is not applicable to 7MHz irregular channels. So, some irregular channel bandwidth will needed two SSB/CORESET#0. In this case, at least for irregular channel bandwidths &lt;10MHz the network broadcasts two separate SSBs, one for each overlapping regular carrier. In case of irregular channels of a small size, e.g. less than 10MHz, it may create the challenge of aligning SSBs in the time and frequency domain so that they do not overlap thus complicating the gNB scheduling. i.e. for this approach complexity increases to coordinate the overlapping SSB for different UEs. As an example, if a particular irregular channel bandwidth does not allow for placing two SSBs in the same time slots, then the network will have two ensure that they are "multiplexed" accordingly in the time domain.
 
-Figure 6.2.1.2-5 shows an example for the 13MHz irregular channel with a
-single/common SSB configured in the overlapping part of two 10MHz
-carriers.
+**Table 6.2.1.2-3: Summary of how many SSB/CORESET#0 needed for different channel bandwidths.**
 
-![Graphical user interface, text, application, email Description
-automatically
-generated](./media/image8.png){width="3.3958333333333335in"
-height="1.28125in"}
+|   Channel (MHz) | Number of SSB   | Time multiplexing for 2 SSBs is needed   |
+|-----------------|-----------------|------------------------------------------|
+|               6 | 2               | yes                                      |
+|               7 | 2               | yes                                      |
+|              11 | 1 or 2          | no                                       |
+|              12 | 1 or 2          | no                                       |
+|              13 | 1 or 2          | no                                       |
 
-**Figure 6.2.1.2-1: Using overlapping carriers with single overlapping
-SSB (example for 13MHz).**
+![Image](data:image/png;base64,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CPZTPB5PZ2f3woVXAQBqa2u3bNkCABgZcSaTqWuvveapp542my3V1VUej3fatOm5FXjgwIGKinKRSAQAOHbs+Jo1a8vLy/x+/969ex955JdHjx57//0PKisr4vH4pk2bHnjgAbFY9N//vlRYWJifb7DZbPv37//Rjx4IhUIkSfn9/mAw+MEHH/p8vpKSEofDsXnzlj/84fdDQ0Nr1qytra3dv39/c3NLfX09l8v56KNP7r77zmnTpr744kupVFKtVm/btm3atGk333xTVjcEQZLJxNDQsFAoTCQS27btnDx5EoZhtbW1R48eTyaTqVQqFApPnDips7O7p6d3woTxVqt18uQpsBeWa1ncbjefz0+lksPDw+FwhCSpEydaKYomSTIWi/F4vAcffHBUB7O6uurQocNOpys7zP+flJQUc7ncr1iY4awwhubM6XTqdLpzNneAIAhBEB988OGWLVtpmqYoSigUPvDA/8tuTAuHw9u27Vi2bNm8eXPD4fAf/vAoiqI2m23//gMPP/xQRUVFIpF49NHHDhw42N/fr9VqfvaznwIAVq5cNTLiQBCEzWaz2ZxwOLxly9af/OThurpao9H00ksvDw0Nz5kzu6amWiAQuN3uJ5/8q9k8vHDhVa2tJ6+99mqKot599737779v3LgmkiQfffSxlpYWsVjsdrv++Mc/SCSS5ubm559fmfuyOZ1ONpud22lCEESr1QIAEARNJBJvvPEmnAZCECQcDldXVwEAcBzv6en517/+DSMiQN89AIBOp0smU263e3h4SKVSqlQqmUxqs9n4fB5BEIWF+dmrQIfkqVOnAgAymcyGDRtmzLji+uuvSyaTf//7Pw4fbt68ecvSpYvnz59P0/Qzz/x769at119/HZvNnjlzxrx5c4PB4O9+9wefz79o0cL29vYlSxbrdLpp06ZVVlZIJJJIJPrb3/62t7ePy+Ww2RwEARRFFRUVPvzwQyiKrlix4uTJkwUF+Uaj8aGHflRdXW212gIBf+4cPIqiHo931aoXMQxLp9PRaBSO/QsKCgmCCIVCg4ODMpm0pKRYr9cZjaaKinKfz9/QUEdRFIqiLS1HvF4fTdM+n89kMt18842zZs0qKysLBAL33vu95uaW7u7u5ctvRxAEfgb27NmT+3SVlJSQJOHxuL+OOfsf06YMZ50xNGc7duy85Zabv8EsyZmB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)
 
-6.2.1.3 Configuration and signalling aspects
+6.2.1.3      Configuration and signalling aspects
 
-Since from an individual UE perspective each overlapping carrier is just
-a legacy carrier, the existing signalling applies. As an example, for
-the 7MHz allocation the UE can be configured with the 5MHz channel
-bandwidth, and the initial bandwidth part can be also 5MHz.
+Since from an individual UE perspective each overlapping carrier is just a legacy carrier, the existing signalling applies. As an example, for the 7MHz allocation the UE can be configured with the 5MHz channel bandwidth, and the initial bandwidth part can be also 5MHz.
 
-\- SIB1-\> servingCellConfigCommon-\> downlinkConfigCommon-\>
-frequencyInfoDL-\> scs-SpecificCarrierList-\> carrierBandwidth = 25 PRBs
-/ subcarrierSpacing = 15 kHz
+-	SIB1-&gt; servingCellConfigCommon-&gt; downlinkConfigCommon-&gt; frequencyInfoDL-&gt; scs-SpecificCarrierList-&gt; carrierBandwidth = 25 PRBs / subcarrierSpacing = 15 kHz
 
-\- SIB1-\> servingCellConfigCommon-\> downlinkConfigCommon-\>
-initialDownlinkBWP-\> genericParameters-\> locationAndBandwidth = 25
-PRBs
+-	SIB1-&gt; servingCellConfigCommon-&gt; downlinkConfigCommon-&gt; initialDownlinkBWP-&gt; genericParameters-&gt; locationAndBandwidth = 25 PRBs
 
-*Editor's note: Signalling aspects to be updated once LS from RAN1/2 is
-received. The text above is current RAN4 understanding.*
+*Editor’s note: Signalling aspects to be updated once LS from RAN1/2 is received.  The text above is current RAN4 understanding.*
 
-6.2.1.4 Compatiblity with legacy devices
+#### 6.2.2	Combined UE CBW (one cell)
 
-Overlapping channels from the network perspective works with all the
-legacy UEs. As presented in previous sub-clauses, from an individual UE
-perspective, this is just a standard Rel-15 channel and no special UE
-side enhancements are needed. Thus an operator can use this solution
-with the whole ecosystem of available devices.
+##### 6.2.2.1      General Aspects
 
-### 6.2.2 Combined UE CBW (one cell)
+- 	Studied spectrum blocks covered by “main RF carrier” and “additional RF carrier”
 
-#### 6.2.2.1 General Aspects
+-	The “main RF carrier” is Rel-15 compatible and contains the SSB as well as all necessary broadcast information, legacy UEs and UEs which do not support this solution are able to camp on it and be connected without being aware of the “additional RF carrier”
 
-\- Studied spectrum blocks covered by "main RF carrier" and "additional
-RF carrier"
+-	The “additional RF carrier” aligned to the “main RF carrier” PRB gridUEs which support this solution would be reconfigured (once UE capabilities are known) in RRC\_CONNECTED to use wider BWP
 
-\- The "main RF carrier" is Rel-15 compatible and contains the SSB as
-well as all necessary broadcast information, legacy UEs and UEs which do
-not support this solution are able to camp on it and be connected
-without being aware of the "additional RF carrier"
+- 	The “main RF carrier” and the “additional RF carrier” treated as single cell (one carrier from baseband perspective) to allow for a single BWP to cover studied spectrum block in RRC\_CONNECTED
 
-\- The "additional RF carrier" , which is partially overlapping with the
-"main RF carrier", is aligned to the "main RF carrier" PRB grid and
-utilizes further PRBs that fit in relevant spectrum block. UEs which
-support this solution would be reconfigured (once UE capabilities are
-known) in RRC\_CONNECTED to use wider BWP than used for initial access.
+- 	Both the “main RF carrier” and the “additional RF carrier” would clearly define the size and position of the guard band which allows for an unambiguous placement of the overlapping channel filters and thus prevents problems with OBUE, ACS or in-band blocking
 
-\- The "main RF carrier" and the "additional RF carrier" treated as
-single cell (one carrier from baseband perspective) to allow for a
-single BWP to cover studied spectrum block in RRC\_CONNECTED
+- 	From UE perspective, supported in downlink only
 
-\- Both the "main RF carrier" and the "additional RF carrier" would
-clearly define the size and position of the guard band which allows for
-an unambiguous placement of the overlapping channel filters and thus
-prevents problems with OBUE, ACS or in-band blocking
+![Image](data:image/png;base64,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)
 
-\- From UE perspective, supported in downlink only
+![Image](data:image/png;base64,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)
 
-6.2.2.2 Signalling and configuration aspects
+#### 6.2.3	Overlapping CA (two cells)
 
-In this section we provide further signaling details on how to support
-irregular channels given the 7MHz allocation as an example.
+##### 6.2.3.1      General Aspects
 
-The gNB broadcasts the DL carrier bandwidth and the bandwidth of the
-initial BWP (BWP\#0) in SIB1. For the 7MHz allocation, SIB1 would
-indicate DL standard channel bandwidth (i.e. 5 MHz), the initial DL BWP
-would be set to 5 MHz to accommodate legacy and new UEs:
+Using the Overlapping CA approach to support irregular spectrum is one of the methods without the need of introduction of new dedicated channel bandwidths for both UE and BS. Figure 6.2.3-1 shows overlapping CA from network perspective, in which BS supports the intra-band overlapping CA, while UEs only supports the single CC with the existing channel bandwidth. And figure 6.2.3-2 shows overlapping CA from UE perspective, in which both BS and UE support the intra-band overlapping CA to use all RBs.
 
-> \- SIB1-\> servingCellConfigCommon-\> downlinkConfigCommon-\>
-> frequencyInfoDL-\> scs-SpecificCarrierList-\> carrierBandwidth = 25
-> PRBs / subcarrierSpacing = 15 kHz
+Even two CCs are overlapped in frequency domain, the network can configure different CCs with non-overlapping BWP to avoid the conflict of physical signals or channels.
 
-\- SIB1-\> servingCellConfigCommon-\> downlinkConfigCommon-\>
-initialDownlinkBWP-\> genericParameters-\> locationAndBandwidth = 25
-PRBs
+UE1: legacy channel bandwidth
 
-Once the UE established the RRC connection, the gNB can account for the
-UE capabilities and re-configure the UE accordingly. At this point the
-gNB may override the carrier bandwidth value that the UE obtained from
-SIB1 and configure a dedicated BWP with a bandwidth that differs from
-the bandwidth of BWP\#0. gNB may configure a larger bandwidth part that
-will cover the whole 7MHz allocation.
+UE2: legacy channel bandwidth
 
-\- ServingCellConfig-\> downlinkChannelBW-PerSCS-List-\>
-carrierBandwidth = 36 PRBs, subcarrierSpacing = 15 kHz
+Overlapping CA for gNB
 
-\- ServingCellConfig-\> downlinkBWP-ToAddModList-\> bwp-Common-\>
-genericParameters-\> locationAndBandwidth = 36 PRBs
+**Figure 6.2.3-1** : Overlapping CA from network perspective
 
-It should be noted that 36 PRBs do not correspond to any channel
-bandwidth currently defined in TS 38.101-1.
+Overlapping CA for gNB
 
-*Editor's note: Signalling aspects to be updated once LS from RAN1/2 is
-received. The text above is current RAN4 understanding.*
+UE3: overlapping CA of CC1 and CC2
 
-6.2.2.3 UE architecture aspects
+CC1: BWP#1
 
-With respect to the UE architecture, the following assumptions are made
-(according to SID objectives):
-
--   New (dedicated) channel filters (e.g. non-integer-multiples of 5
-    MHz) are not considered
-
--   UEs not supporting this solution (both legacy and new UEs) should be
-    able to use the next lower supported channel bandwidth in the UL and
-    DL without implications
-
-Two different UE architecture scenarios are explained (legacy UEs using
-next smaller bandwidth in Clause 6.6.2 and UEs supporting two receive
-chains for reception described below:
-
-This option is for new UEs that contain transceiver architectures and
-configurations that have flexibility in local oscillator and receive
-chain assignments. The flexibility in the configuration allows the UEs
-to configure their receive paths (Antenna to FFT) similarly to
-non-contiguous carrier aggregation, allowing the two LO and receive
-chains to down-convert the spectrum of the irregular bandwidth as if it
-consisted of two separate carriers on the UE side. Based on the channel
-center of the main RF carrier and the configured irregular bandwidth the
-UE would know where to place the center frequency of the additional RF
-carrier that follows the PRB grid (which overlaps with the main RF
-carrier and includes the remaining agreed PRBs for the irregular BW).
-The UE down-converts two different sets of PRBs, with an overlapping
-segment and may use for irregular bandwidth below 15MHz the next smaller
-bandwidth channel filtering on both of the receive chains as shown in
-Figure 6.2.2.3-1 ("DigRF" serves as an example only and corresponds to
-the interface between RF and baseband chipset). This allows the UE to
-benefit from channel filtering designed for the specific bandwidth.
-Using the next smaller bandwidth channel filtering on both of the two
-carrier parts, the baseband signal processing following the FFTs must be
-modified such that the signals from these two carrier parts are combined
-and processed as a single codeword instead of being process separately.
-Since the LOs on the UE will operate at different frequencies, there
-will be a phase difference of the two signals contained in the two
-receive chains for the separate carriers.
-
-In order to prevent problems in the channel estimation if there is an
-averaging or interpolation across reference signals at different
-subcarriers, the phases of the symbols in the frequency domain from both
-RF receive chains caused by the UE's use of separate LOs should be
-aligned. This can be achieved by a new function comparing the
-overlapping symbols from both FFT outputs and phase shifting one FFT
-output accordingly before the FFT outputs are merged.
-
-![](./media/image12.png){width="8.868055555555555in"
-height="4.021829615048119in"}
-
-**Figure 6.2.2.3-1**: UE architecture for full BW support showing split
-by the use of two LOs
-
-Depending on the receiver architecture and the distribution of the
-channel filtering between the analogue and the digital domain, it is
-also possible to A/D convert a frequency range that accommodates the
-entire irregular BW and to split the signal afterwards by means of NCOs
-(instead of LOs) into the 2 RF carriers with their individual channel
-filter positions as shown in Figure 6.2.2.3-2.
-
-![](./media/image13.png){width="8.395833333333334in"
-height="3.823015091863517in"}
-
-**Figure 6.2.2.3-2**: UE architecture for full BW support showing split
-by the use of NCOs
-
-### 6.2.3 Overlapping CA (two cells)
-
-#### 6.2.3.1 General Aspects
-
-Using the Overlapping CA approach to support irregular spectrum is one
-of the methods without the need of introduction of new dedicated channel
-bandwidths for both UE and BS. Figure 6.2.3-1 shows overlapping CA from
-network perspective, in which BS supports the intra-band overlapping CA,
-while UEs only supports the single CC with the existing channel
-bandwidth. And figure 6.2.3-2 shows overlapping CA from UE perspective,
-in which both BS and UE support the intra-band overlapping CA to use all
-RBs.
-
-Even two CCs are overlapped in frequency domain, the network can
-configure different CCs with non-overlapping BWP to avoid the conflict
-of physical signals or channels.
-
-**Figure 6.2.3-1**: Overlapping CA from network perspective
+CC2: BWP#2
 
 Figure 6.2.3-2: Overlapping CA from UE perspective
 
 In summary,
 
-\- No new gNB channel bandwidth is required
+-	No new gNB channel bandwidth is required
 
-\- Legacy UE using existing lower regular NR channel bandwidth can
-operate in either carrier
+-	Legacy UE using existing lower regular NR channel bandwidth can operate in either carrier
 
-\- Overlapping CA approach needs to have PRB grid alignment between
-overlapping CCs
+-	Overlapping CA approach needs to have PRB grid alignment between overlapping CCs
 
-\- UE perspective, overlapping CA is optional supported in DL only
+-	UE perspective, overlapping CA is optional supported in DL only
 
-\- Irregular bandwidth utilizing overlapping CA approach cannot be
-combined with NR CA combinations
+### 6.3	Complexity and efficiency study
 
-6.3 Complexity and efficiency study
------------------------------------
+##### 6.3.1	Combined UE CBW (one cell)
 
-#### 6.3.1 Combined UE CBW (one cell)
+-	Does not require new channel filters for UE and gNB to be designed and tested
 
-\- Does not require new channel filters for UE and gNB to be designed
-and tested
+-	Requires support of two RF carriers phase aligned on the Tx side to ensure phase continuity on the Rx side
 
-\- Requires support of two RF carriers phase aligned on the Tx side to
-ensure phase continuity on the Rx side
+-	Requires
 
-> \- Requires split of the irregular bandwidth into two sets of PRBs
-> that may be filtered through the next smaller bandwidth after which
-> the signal is combined at baseband as a single carrier. For such
-> processing, UE may benefit from supporting intra-band non-contiguous
-> CA.
->
-> \- Requires UE architecture with capability to split LNA output signal
-> to two separate LO paths for down-conversion. Also requires UE
-> architecture with the ability to combine baseband signals.
+-	For scenarios with less than 10 MHz, second SSB is not excluded but not recommended due to significant additional overhead (duplicated SSB transmission as well as other radio resources such as PDCCH, CSI-RS, PDSCH (for SIB), CSI for Tracking, etc.). However, second SSB could enable or improve the legacy UEs' use of the further PRBs provided by the additional RF carrier in spectrum scenarios with less than 10 MHz.
 
-\- For scenarios with less than 10 MHz, second SSB is not excluded but
-not recommended due to significant additional overhead (duplicated SSB
-transmission as well as other radio resources such as PDCCH, CSI-RS,
-PDSCH (for SIB), CSI for Tracking, etc.). However, second SSB could
-enable or improve the legacy UEs\' use of the further PRBs provided by
-the additional RF carrier in spectrum scenarios with less than 10 MHz.
+-	“Additional RF carrier” not to be on the channel raster to increase spectrum utilization (up to 2 PRBs), it should be noted “additional RF carrier” is used only by UEs which support this solution
 
-\- "Additional RF carrier" not to be on the channel raster to increase
-spectrum utilization (up to 2 PRBs), it should be noted that the
-complete "additional RF carrier" is used only by UEs which support this
-solution "additional RF carrier" can be used partially (with up to 2
-PRBs not available) by legacy UEs which are on the channel raster.
+-	Proposed BWPs size of the irregular spectrum chunk may have an impact on performance requirements and additional testing
 
-\- Proposed BWPs size of the irregular spectrum chunk may have an impact
-on performance requirements and additional testing
+-	High spectrum utilization
 
-\- High spectrum utilization:
+due to low internal guard band
 
-> \- due to low internal guard band. The spectrum utilization values in
-> the table below use guard band values according to the minimum guard
-> bands defined for the smallest possible channel bandwidths that could
-> be theoretically considered as part of each combined UE CBW. The
-> actual minimum guard band requirements for combined UE CBW
-> configurations would require further discussion in any follow-up WI.
+as well as no additional CA overhead (duplicated common channels and signals such as SSB, PDCCH and CSI-RS configured both in Pcell and Scell, in addition of the MAC processes associated with CA) due to single baseband carrier usage:
 
-\- as well as no additional CA overhead (duplicated common channels and
-signals such as SSB, PDCCH and CSI-RS configured both in Pcell and
-Scell, in addition of the MAC processes associated with CA) due to
-single baseband carrier usage:
+|   Spectrum block [MHz] |   Number of PRBs (15kHz SCS without 100kHz raster alignment) |   Spectrum utilization (without 100kHz raster alignment) [%] |   Number of PRBs (15kHz SCS with 100kHz raster alignment) |   Spectrum utilization (with 100kHz raster alignment) [%] |
+|------------------------|--------------------------------------------------------------|--------------------------------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------|
+|                      6 |                                                           30 |                                                         90   |                                                        30 |                                                      90   |
+|                      7 |                                                           36 |                                                         92.6 |                                                        35 |                                                      90   |
+|                     11 |                                                           58 |                                                         94.9 |                                                        57 |                                                      93.3 |
+|                     12 |                                                           63 |                                                         94.5 |                                                        62 |                                                      93   |
+|                     13 |                                                           69 |                                                         95.5 |                                                        67 |                                                      92.8 |
 
-**Table 6.3.1-1: spectrum utilization**
-
-+-------------+-------------+-------------+-------------+-------------+
-| **Spectrum  | **Number of | **Spectrum  | **Number of | **Spectrum  |
-| block       | PRBs**      | utilization | PRBs**      | utilization |
-| \[MHz\]**   |             | for new     |             | for new     |
-|             | **(15kHz    | UE**        | **(15kHz    | UE**        |
-|             | SCS without | **(without  | SCS with    | **(with     |
-|             | 100kHz      | 100kHz      | 100kHz      | 100kHz      |
-|             | raster      | raster      | raster      | raster      |
-|             | a           | alignment)  | a           | alignment)  |
-|             | lignment)** | \[%\]**     | lignment)** | \[%\]**     |
-+=============+=============+=============+=============+=============+
-| 6           | 30          | 90          | 30          | 90          |
-+-------------+-------------+-------------+-------------+-------------+
-| 7           | 36          | 92.6        | 35          | 90          |
-+-------------+-------------+-------------+-------------+-------------+
-| 11          | 58          | 94.9        | 57          | 93.3        |
-+-------------+-------------+-------------+-------------+-------------+
-| 12          | 63          | 94.5        | 62          | 93          |
-+-------------+-------------+-------------+-------------+-------------+
-| 13          | 69          | 95.5        | 67          | 92.8        |
-+-------------+-------------+-------------+-------------+-------------+
-
-#### 6.3.2 Overlapping CA (two cells)
+##### 6.3.2	Overlapping CA (two cells)
 
 From network perspective:
 
-For gNB, no new filter for RF channel is needed. The CA implementation
-can be reused. The only update is to allow the configuration that the
-two carriers can be partially overlapped by adjusting the channel
-spacing. The network can prevent collisions between the two component
-carriers.
+For gNB, no new filter for RF channel is needed. The CA implementation can be reused. The only update is to allow the configuration that the two carriers can be partially overlapped by adjusting the channel spacing. The network can prevent collisions between the two component carriers.
 
 For UE, there is no impact and fully backwards compatible.
 
 From UE perspective:
 
-For gNB, the two RF carriers aggregated by the UE would need to be
-time-aligned by the gNB to at least \[the same level required for
-existing intra-band contiguous CA (TS 38.104 Timing Adjustment Error)\]
-to allow UE reception. It is FFS as to whether finer timing alignment
-would be required.
+For gNB,.
 
-For UE, it is optional support in DL only. For the UE supports DL
-intra-band non-contiguous CA with corresponding channel bandwidth(s),
-overlapping CA can be considered by support the configuration with
-partially overlapping carriers. And in the case no new channel filter
-for UE is needed.
+For UE, it is optional support in DL only. For the UE supports DL intra-band non-contiguous CA with corresponding channel bandwidth(s), overlapping CA can be considered by support the configuration with partially overlapping carriers.  And in the case no new channel filter for UE is needed.
 
-For overlapping CA solution, the legacy channel bandwidth should be
-supported, hence the minimum guardband should not be less than the
-minimum guardband of lower UE channel bandwidth than operator licensed
-bandwidth. To support legacy UEs, channel raster should be applied for
-each UE channels. And in order to simplify the resource schedule and
-make the use of single SSB for CA operation, RB alignment is required.
-Table 6.3.x-1 show the channel spacing and spectrum utilization for the
-example channel bandwidths assuming symmetric CA channel bandwidth.
+For overlapping CA solution, the legacy channel bandwidth should be supported, hence the minimum guardband should not be less than the minimum guardband of lower UE channel bandwidth than operator licensed bandwidth. To support legacy UEs, channel raster should be applied for each UE channels. And in order to simplify the resource schedule and make the use of single SSB for CA operation, RB alignment is required. Table 6.3.x-1 show the channel spacing and spectrum utilization for the example channel bandwidths.
 
 **Table 6.3.2-1: channel spacing and spectrum utilization**
 
-  Irregular Bandwidth(MHz)   SCS(kHz)   CA combos   Nominal channel spacing (MHz)   Transmission bandwidth configuration NRB   Spectrum utilization (%)
-  -------------------------- ---------- ----------- ------------------------------- ------------------------------------------ --------------------------
-  6                          15         5+5         0.9                             30                                         90
-  7                          15         5+5         1.8                             35                                         90
-  11                         15         10+10       0.9                             57                                         93.3
-  12                         15         10+10       1.8                             62                                         93
-  13                         15         10+10       2.7                             67                                         92.8
+|   Bandwidth(MHz) |   SCS(kHz) | CA combos   |   Nominal channel spacing (MHz) |   Transmission bandwidth configuration NRB  |   Spectrum utilization (%) |
+|------------------|------------|-------------|---------------------------------|---------------------------------------------|----------------------------|
+|                6 |         15 | 5+5         |                             0.9 |                                          30 |                       90   |
+|                7 |         15 | 5+5         |                             1.8 |                                          35 |                       90   |
+|               11 |         15 | 10+10       |                             0.9 |                                          57 |                       93.3 |
+|               12 |         15 | 10+10       |                             1.8 |                                          62 |                       93   |
+|               13 |         15 | 10+10       |                             2.7 |                                          67 |                       92.8 |
 
-6.4 Generic solutions guidance
-------------------------------
+### 6.4	Generic solutions guidance
 
-NOTE: The 6^th^ objective is not an analysis/study but a guidance on
-solutions. A comparison of the proposed solutions with respect to the
-criteria in the 6^th^ objective should be included in this clause.
+NOTE: The 6th objective is not an analysis/study but a guidance on solutions. A comparison of the proposed solutions with respect to the criteria in the 6th objective should be included in this clause.
 
-6.4.1 Overlapping UE CBW
+6.4.1	Overlapping UE CBW
 
-This approach can be also be applied to all irregular channel bandwidths
-with only consideration of different spectral utilization
-considerations. However the single CORESET\#0 and SSB is only applicable
-for bandwidths greater than 10 MHz. All irregular channel bandwidths two
-SSBs can be used (irregular channel bandwidths \< 10 MHz SSB can be
-TDM). .
+This approach can be also be applied to all irregular channel bandwidths with only consideration of different spectral utilization considerations. However the single CORESET#0 and SSB is only applicable for bandwidths greater than 10 MHz.  All irregular channel bandwidths two SSBs can be used (irregular channel bandwidths  &lt; 10 MHz SSB can be TDM).  .
 
-#### 6.4.2 Combined UE CBW (one cell)
+##### 6.4.2	Combined UE CBW (one cell)
 
-\- Generic and future proof solution, the channel bandwidth can be
-tailored with the resolution of 1PRB
+-	Generic and future proof solution, the channel bandwidth can be tailored with the resolution of 1PRB
 
-\- Ensured co-existence with very limited specification impact since
-both the "main RF carrier" and the "additional RF carrier" would conform
-to existing 3GPP requirements
+-	Ensured co-existence with very limited specification impact since both the “main RF carrier” and the “additional RF carrier” would conform to existing 3GPP requirements
 
-\- Does not require new channel filters for UE and gNB to be designed
-and tested
+-	Does not require new channel filters for UE and gNB to be designed and tested
 
-6.5 RAN1 and RAN2 impact
-------------------------
+### 6.5	RAN1 and RAN2 impact
 
-6.5.1 Overlapping CA (two cells)
+### 6.6	Legacy UE impact
 
-CSI-RS measurement and reporting for the component carriers are
-specified in TS 38.213 and to be performed independently per-carrier,
-similarly for PDCCH. It is up to the gNB scheduler to avoid collisions
-of different transmissions for the overlapping part with overlapping CA
-cross-carrier scheduling.
+NOTE: The 8th objective is not an analysis/study but a guidance on solutions
 
-UE capability signalling does not provide any possibility for UE to
-indicate support of overlapped CA. New signalling would be required in
-order for this approach to become feasible.
+6.6.1	Overlapping UE CBW
 
-*Editor's note: An indication of the time required to setup two CSI-RS
-measurements would be added later*
+This approach works with all the legacy UEs and thus an operator can use this solution with the whole ecosystem of available devices.
 
-6.6 Legacy UE impact
---------------------
+##### 
 
-NOTE: The 8^th^ objective is not an analysis/study but a guidance on
-solutions
+##### 6.6.2	Combined UE CBW (one cell)
 
-6.6.1 Overlapping UE CBW
+-	No impact to legacy UEs. UEs which support this solution would be reconfigured in RRC\_CONNECTED, there is no change to UE behaviour in IDLE mode which could create potential issue with legacy UE compatibility
 
-This approach works with all the legacy UEs and thus an operator can use
-this solution with the whole ecosystem of available devices.
+<!-- 🖼️❌ Image not available. Please use `PdfPipelineOptions(generate_picture_images=True)` -->
 
-#### 
+### 6.7	RAN4 standard impact identification
 
-#### 6.6.2 Combined UE CBW (one cell)
+##### 6.7.1	Combined UE CBW (one cell)
 
-\- No impact to legacy UEs. UEs which support this solution would be
-reconfigured in RRC\_CONNECTED, there is no change to UE behaviour in
-IDLE mode which could create potential issue with legacy UE
-compatibility
+-	Very limited since both the “main RF carrier” and the “additional RF carrier” would conform to existing 3GPP requirements, to guarantee co-existence
 
-This option is for UEs that have no support for using an irregular
-bandwidth. Such a UE will apply the next smaller bandwidth referring to
-the channel filtering. It will never receive more than the PRBs defined
-for the next smaller bandwidth and it follows the conventional way of
-aligning the center frequency of the channel in both DL and UL. These
-UEs will camp on the same frequency part of the channel since the SIB1
-only has one allocation. In CONNECTED mode, the network can configure UE
-with the UE specific *ServingCellConfig* IE which configures the point A
-reference that may shift the UE to operate either at the lower side or
-the upper side of the irregular bandwidth. In most of the configurations
-with an irregular BW below 10 MHz, legacy UEs can only use one side of
-the irregular BW unless -- as in the case of overlapping CBWs from
-network perspective -- a second, time-staggered SSB is spent.
+##### 6.7.2	Overlapping CA (two cells)
 
-![](./media/image7.emf){width="1.5833333333333333in"
-height="1.1979166666666667in"}
-
-> **Figure 6.6.2-1**: Legacy UE may be configured for either of the two
-> carriers
-
-6.7 RAN4 standard impact identification
----------------------------------------
-
-#### 6.7.1 Combined UE CBW (one cell)
-
-\- Very limited since both the "main RF carrier" and the "additional RF
-carrier" would conform to existing 3GPP requirements, to guarantee
-co-existence
-
-#### 6.7.2 Overlapping CA (two cells)
-
-The CA framework defines the transmitter emission and receiver blocking
-at the edge of carriers. Limited impacted is expected to enable
-coexistence with neighbouring channels for this scenario. Overlapping CA
-channel spacing need to be updated to consider channel raster, minimum
-guard band and RB alignment.
+The CA framework defines the transmitter emission and receiver blocking at the edge of carriers. Limited impacted is expected to enable coexistence with neighbouring channels for this scenario. Overlapping CA channel spacing need to be updated to consider channel raster, minimum guard band and RB alignment.
 
 For 15 KHz SCS and 100 KHz channel raster,
 
-$$\text{Channel}\mspace{6mu}\text{spacing} = \left\lfloor \frac{2*BW_{Ch\text{annel}} - (BW_{Ch\text{annel}\left( 1 \right)} + BW_{Ch\text{annel}\left( 2 \right)})}{1.8} \right\rfloor 0.9\mspace{6mu}(\text{MHz)}$$
+$$Channel \hspace{0.33em} spacing=\left⌊\frac{2*BW_{Channel}-(BW_{Channel\left(1\right)}+BW_{Channel\left(2\right)})}{1.8}\right⌋0.9 \hspace{0.33em} (MHz)$$
 
 For NR *operating bands* with 15 kHz channel raster,
 
-$$\text{Channel}\mspace{6mu}\text{spacing} = \left\lfloor \frac{2*BW_{Ch\text{annel}} - (BW_{Ch\text{annel}\left( 1 \right)} + BW_{Ch\text{annel}\left( 2 \right)})}{0.18*2^{n + 1}} \right\rfloor 0.18*2^{n}\mspace{6mu}(\text{MHz)}$$
+$$Channel \hspace{0.33em} spacing=\left⌊\frac{2*BW_{Channel}-(BW_{Channel\left(1\right)}+BW_{Channel\left(2\right)})}{0.18*2^{n+1}}\right⌋0.18*2^{n} \hspace{0.33em} (MHz)$$
 
 with
 
-$n = \mu_{0}$
+$$n= \mu _{0}$$
 
-#### 6.7.y Overlapping UE CBW
+##### 6.7.y	Overlapping UE CBW
 
-If the irregular channel bandwidths are explicitly defined in the
-specification, it will create huge technical specification work. For
-each channel bandwidth, the guard band size and the transmission
-bandwidth configuration need to be specified and used as a basis for
-defining transmitter and receiver requirements. The identified impact to
-BS core specification for a new channel BW is shown in following Table
-6.7.y-1.
+If the irregular channel bandwidths are explicitly defined in the specification, it will create huge technical specification work. For each channel bandwidth, the guard band size and the transmission bandwidth configuration need to be specified and used as a basis for defining transmitter and receiver requirements. The identified impact to BS core specification for a new channel BW is shown in following Table 6.7.y-1.
 
-Table 6.7.y-1 Analysis on the impact to BS core specification for a new
-channel BW
+Table 6.7.y-1 Analysis on the impact to BS core specification for a new channel BW
 
-  **Subject**   **Clause in 36.104/38.104**   **Requirement**                                              **Assessment for new channel BW**
-  ------------- ----------------------------- ------------------------------------------------------------ ----------------------------------------------------------------------------------------------------------------------
-  General       5.3.2                         Transmission bandwidth configuration                         the Transmission bandwidth configuration NRB for the new CBW need to be defined
-                5.3.3                         Minimum guardband and transmission bandwidth configuration   The minimum guardband for the new CBW need to be defined
-                5.3.5                         BS channel bandwidth per operating band                      new CBW need defined per band
-  Transmitter   6.3.3                         Total power dynamic range                                    it is a NRB related requirement
-                6.6.2                         Occupied bandwidth                                           BS channel bandwidth should be defined
-                6.6.3                         ACLR                                                         The filter are set using transmission bandwidth configuration (BWConfig). It need to be defined for testing
-                6.7                           Transmitter intermodulation                                  the interfering is defined according to BS channel bandwidth
-  Receiver      7.2                           Reference sensitivity level                                  for 15 KHz SCS, 25 RB and 106 RB FRC which can be reused
-                7.3                           Dynamic range                                                interfering signal level is according to BS channel bandwidth
-                7.4                           In-band selectivity and blocking                             the position of interfering signal is defined according to BS channel bandwidth/transmission bandwidth configuration
-                7.7                           Receiver intermodulation                                     the position of interfering signal is defined according to BS channel bandwidth/transmission bandwidth configuration
-                7.8                           In-channel selectivity                                       it is defined according to BS channel bandwidth
+| Subject     | Clause in 36.104/38.104   | Requirement                                                | Assessment for new channel BW                                                                                        |
+|-------------|---------------------------|------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
+| General     | 5.3.2                     | Transmission bandwidth configuration                       | the Transmission bandwidth configuration NRB for the new CBW need to be defined                                      |
+| General     | 5.3.3                     | Minimum guardband and transmission bandwidth configuration | The minimum guardband for the new CBW need to be defined                                                             |
+| General     | 5.3.5                     | BS channel bandwidth per operating band                    | new CBW need defined per band                                                                                        |
+| Transmitter | 6.3.3                     | Total power dynamic range                                  | it is a NRB related requirement                                                                                      |
+| Transmitter | 6.6.2                     | Occupied bandwidth                                         | BS channel bandwidth should be defined                                                                               |
+| Transmitter | 6.6.3                     | ACLR                                                       | The filter are set using transmission bandwidth configuration (BWConfig). It need to be defined for testing          |
+| Transmitter | 6.7                       | Transmitter intermodulation                                | the interfering is defined according to BS channel bandwidth                                                         |
+| Receiver    | 7.2                       | Reference sensitivity level                                | for 15 KHz SCS, 25 RB and 106 RB FRC which can be reused                                                             |
+| Receiver    | 7.3                       | Dynamic range                                              | interfering signal level is according to BS channel bandwidth                                                        |
+| Receiver    | 7.4                       | In-band selectivity and blocking                           | the position of interfering signal is defined according to BS channel bandwidth/transmission bandwidth configuration |
+| Receiver    | 7.7                       | Receiver intermodulation                                   | the position of interfering signal is defined according to BS channel bandwidth/transmission bandwidth configuration |
+| Receiver    | 7.8                       | In-channel selectivity                                     | it is defined according to BS channel bandwidth                                                                      |
 
-It is concluded that new dedicated BS channel bandwidths for irregular
-channel bandwidths are not defined explicitly in the specification.
+It is concluded that new dedicated BS channel bandwidths for irregular channel bandwidths are not defined explicitly in the specification.
 
-7 Conclusion 
-============
+## 7	Conclusion
 
 TBD
 
-Page setup parameters
-=====================
+## Page setup parameters
 
-This clause defines the margin parameters and the header to be used
-(implemented in the macros).
+This clause defines the margin parameters and the header to be used (implemented in the macros).
 
 Title page (= title section)
 
-A4 portrait, Top: 4 cm, Bottom: 19 cm, Left: 1,5 cm, Right: 1,5 cm,
-Gutter: 0 cm, Header: 0 cm, Footer: 0 cm.
+A4 portrait, Top: 4 cm, Bottom: 19 cm, Left: 1,5 cm, Right: 1,5 cm, Gutter: 0 cm, Header: 0 cm, Footer: 0 cm.
 
 Portrait sections
 
-A4 portrait, Top: 2.5 cm, Bottom: 2 cm, Left: 2 cm, Right: 2 cm, Gutter:
-0 cm, Header: 1,5 cm, Footer: 0,6 cm.
+A4 portrait, Top: 2.5 cm, Bottom: 2 cm, Left: 2 cm, Right: 2 cm, Gutter: 0 cm, Header: 1,5 cm, Footer: 0,6 cm.
 
 Landscape sections
 
-A4 landscape, Top: 2 cm, Bottom: 2 cm, Left: 2 cm, Right: 2,5 cm,
-Gutter: 0 cm, Header: 1,5 cm, Footer: 0,6 cm.
+A4 landscape, Top: 2 cm, Bottom: 2 cm, Left: 2 cm, Right: 2,5 cm, Gutter: 0 cm, Header: 1,5 cm, Footer: 0,6 cm.
 
 Headers and footers
 
 Header
 
-The following contains the master location for all headers (except for
-the title section). These paragraphs contain framed fields which will
-result in one header line and are bookmarked \"header\".
+The following contains the master location for all headers (except for the title section). These paragraphs contain framed fields which will result in one header line and are bookmarked "header".
 
-The left-most entry contains a possible additional document reference,
-e.g. \" Release 17\", identified on the title page by the use of the
-ZGSM character style.
+The left-most entry contains a possible additional document reference, e.g. " Release 17", identified on the title page by the use of the ZGSM character style.
 
-Release \| 17 \| 16 \| 15
+Release | 17 | 16 | 15
 
 The centre entry is the page number.
 
 11
 
-The right-most entry repeats the title page information, identified by
-the use of the ZA paragraph style.
+The right-most entry repeats the title page information, identified by the use of the ZA paragraph style.
 
 3GPP TS ab.cde Vx.y.z (yyyy-mm)
 
-> NOTE: For documents which are split into more than one file, the
-> possible additional document reference and the title page information
-> need to be hardcoded in all files except the one containing the title
-> section.
->
-> NOTE: It has been found that opening very long documents with MS Word
-> 2016 onwards (including versions of Word packaged in MS Office 365)
-> can take a very long time, as can navigating around the document. This
-> applies both in draft view and in print layout view. To solve this
-> problem, the page header **[for each section]{.underline}** of the
-> document may be hard-coded, replicating the text which would otherwise
-> have been automated via the use of ZGSM and ZA styles.
+NOTE:	For documents which are split into more than one file, the possible additional document reference and the title page information need to be hardcoded in all files except the one containing the title section.
+
+NOTE: It has been found that opening very long documents with MS Word 2016 onwards (including versions of Word packaged in MS Office 365) can take a very long time, as can navigating around the document. This applies both in draft view and in print layout view. To solve this problem, the page header **for each section** of the document may be hard-coded, replicating the text which would otherwise have been automated via the use of ZGSM and ZA styles.
 
 Footer
 
-The footer contains always \"3GPP\" (except for the title page).
+The footer contains always "3GPP" (except for the title page).
 
 3GPP
 
-########  Annex \<A\> (normative): \<Normative annex for a Technical Specification\>
+######### Annex &lt;A&gt; (normative):
+&lt;Normative annex for a Technical Specification&gt;
 
-########  Annex \<B\> (informative): \<Informative annex for a Technical Specification\>
+######### Annex &lt;B&gt; (informative):
+&lt;Informative annex for a Technical Specification&gt;
 
-########   
+######### 
 
-######## Annex \<X\> (informative): Change history
+######### Annex &lt;X&gt; (informative):
+Change history
 
-This is the last annex for TS/TSs which details the change history using
-the following table.\
-This table is to be used for recording progress during the WG drafting
-process till TSG approval of this TS/TR.\
-For TRs under change control, use one line per approved Change Request\
-Date: use format YYYY-MM\
-CR: four digits, leading zeros as necessary\
-Rev: blank, or number (max two digits)\
-Cat: use one of the letters A, B, C, D, F\
-Subject/Comment: for TSs under change control, include full text of the
-subject field of the Change Request cover\
-New vers: use format \[n\]n.\[n\]n.\[n\]n
+This is the last annex for TS/TSs which details the change history using the following table.
+This table is to be used for recording progress during the WG drafting process till TSG approval of this TS/TR.
+For TRs under change control, use one line per approved Change Request
+Date: use format YYYY-MM
+CR: four digits, leading zeros as necessary
+Rev: blank, or number (max two digits)
+Cat: use one of the letters A, B, C, D, F
+Subject/Comment: for TSs under change control, include full text of the subject field of the Change Request cover
+New vers: use format [n]n.[n]n.[n]n
 
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| **C   |       |       |       |       |       |       |       |
-| hange |       |       |       |       |       |       |       |
-| hist  |       |       |       |       |       |       |       |
-| ory** |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| **D   | *     | **T   | *     | **    | **    | **Su  | **New |
-| ate** | *Meet | Doc** | *CR** | Rev** | Cat** | bject | vers  |
-|       | ing** |       |       |       |       | /Comm | ion** |
-|       |       |       |       |       |       | ent** |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | RAN   | R4-20 |       |       |       | TR    | 0.0.1 |
-| 20-11 | 4\#97 | 15722 |       |       |       | Ske   |       |
-|       |       |       |       |       |       | leton |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | RAN   | R4-20 |       |       |       | TR    | 0.0.1 |
-| 20-11 | 4\#97 | 16930 |       |       |       | Ske   |       |
-|       |       |       |       |       |       | leton |       |
-|       |       |       |       |       |       | (rev  |       |
-|       |       |       |       |       |       | ised) |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | RAN   | R4-21 |       |       |       | Up    | 0.0.2 |
-| 21-01 | 4\#98 | 01555 |       |       |       | dated |       |
-|       |       |       |       |       |       | TR    |       |
-|       |       |       |       |       |       | 3     |       |
-|       |       |       |       |       |       | 8.844 |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | RAN   | R4-21 |       |       |       | Up    | 0.0.2 |
-| 21-01 | 4\#98 | 03262 |       |       |       | dated |       |
-|       |       |       |       |       |       | TR    |       |
-|       |       |       |       |       |       | 3     |       |
-|       |       |       |       |       |       | 8.844 |       |
-|       |       |       |       |       |       | (rev  |       |
-|       |       |       |       |       |       | ised) |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | R     | R4-21 |       |       |       | TP to | 0.0.2 |
-| 21-04 | AN4\# | 06690 |       |       |       | the   |       |
-|       | 98bis |       |       |       |       | TR    |       |
-|       |       |       |       |       |       | 38    |       |
-|       |       |       |       |       |       | .844: |       |
-|       |       |       |       |       |       | T     |       |
-|       |       |       |       |       |       | ermin |       |
-|       |       |       |       |       |       | ology |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | R     | R4-21 |       |       |       | TP to | 0.0.2 |
-| 21-04 | AN4\# | 05420 |       |       |       | the   |       |
-|       | 98bis |       |       |       |       | TR    |       |
-|       |       |       |       |       |       | 38    |       |
-|       |       |       |       |       |       | .844: |       |
-|       |       |       |       |       |       | T     |       |
-|       |       |       |       |       |       | ermin |       |
-|       |       |       |       |       |       | ology |       |
-|       |       |       |       |       |       | (rev  |       |
-|       |       |       |       |       |       | ised) |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | RAN4\ | R4-21 |       |       |       | U     | 0.0.3 |
-| 21-05 | #99-e | 10487 |       |       |       | pdate |       |
-|       |       |       |       |       |       | TR    |       |
-|       |       |       |       |       |       | 3     |       |
-|       |       |       |       |       |       | 8.844 |       |
-|       |       |       |       |       |       | with  |       |
-|       |       |       |       |       |       | TP    |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | RAN4\ | R4-21 |       |       |       | TP on | 0.0.3 |
-| 21-05 | #99-e | 08021 |       |       |       | the   |       |
-|       |       |       |       |       |       | use   |       |
-|       |       |       |       |       |       | of    |       |
-|       |       |       |       |       |       | o     |       |
-|       |       |       |       |       |       | verla |       |
-|       |       |       |       |       |       | pping |       |
-|       |       |       |       |       |       | ch    |       |
-|       |       |       |       |       |       | annel |       |
-|       |       |       |       |       |       | bandw |       |
-|       |       |       |       |       |       | idths |       |
-|       |       |       |       |       |       | from  |       |
-|       |       |       |       |       |       | UE    |       |
-|       |       |       |       |       |       | p     |       |
-|       |       |       |       |       |       | erspe |       |
-|       |       |       |       |       |       | ctive |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | RAN4\ | R4-21 |       |       |       | TP to | 0.0.3 |
-| 21-05 | #99-e | 07885 |       |       |       | TR3   |       |
-|       |       |       |       |       |       | 8.844 |       |
-|       |       |       |       |       |       | on    |       |
-|       |       |       |       |       |       | wider |       |
-|       |       |       |       |       |       | ch    |       |
-|       |       |       |       |       |       | annel |       |
-|       |       |       |       |       |       | BW    |       |
-|       |       |       |       |       |       | m     |       |
-|       |       |       |       |       |       | ethod |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | RAN4\ | R4-21 |       |       |       | TP to | 0.0.3 |
-| 21-05 | #99-e | 08022 |       |       |       | TR3   |       |
-|       |       |       |       |       |       | 8.844 |       |
-|       |       |       |       |       |       | on    |       |
-|       |       |       |       |       |       | wider |       |
-|       |       |       |       |       |       | ch    |       |
-|       |       |       |       |       |       | annel |       |
-|       |       |       |       |       |       | BW    |       |
-|       |       |       |       |       |       | m     |       |
-|       |       |       |       |       |       | ethod |       |
-|       |       |       |       |       |       | (rev  |       |
-|       |       |       |       |       |       | ised) |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | RAN4\ | R4-21 |       |       |       | TP on | 0.0.3 |
-| 21-05 | #99-e | 09436 |       |       |       | using |       |
-|       |       |       |       |       |       | o     |       |
-|       |       |       |       |       |       | verla |       |
-|       |       |       |       |       |       | pping |       |
-|       |       |       |       |       |       | cha   |       |
-|       |       |       |       |       |       | nnels |       |
-|       |       |       |       |       |       | from  |       |
-|       |       |       |       |       |       | the   |       |
-|       |       |       |       |       |       | ne    |       |
-|       |       |       |       |       |       | twork |       |
-|       |       |       |       |       |       | p     |       |
-|       |       |       |       |       |       | erspe |       |
-|       |       |       |       |       |       | ctive |       |
-|       |       |       |       |       |       | sol   |       |
-|       |       |       |       |       |       | ution |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | RAN4\ | R4-21 |       |       |       | TP on | 0.0.3 |
-| 21-05 | #99-e | 07887 |       |       |       | using |       |
-|       |       |       |       |       |       | o     |       |
-|       |       |       |       |       |       | verla |       |
-|       |       |       |       |       |       | pping |       |
-|       |       |       |       |       |       | cha   |       |
-|       |       |       |       |       |       | nnels |       |
-|       |       |       |       |       |       | from  |       |
-|       |       |       |       |       |       | the   |       |
-|       |       |       |       |       |       | ne    |       |
-|       |       |       |       |       |       | twork |       |
-|       |       |       |       |       |       | p     |       |
-|       |       |       |       |       |       | erspe |       |
-|       |       |       |       |       |       | ctive |       |
-|       |       |       |       |       |       | sol   |       |
-|       |       |       |       |       |       | ution |       |
-|       |       |       |       |       |       | (rev  |       |
-|       |       |       |       |       |       | ised) |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | RAN4\ | R4-21 |       |       |       | TP on | 0.0.3 |
-| 21-05 | #99-e | 08112 |       |       |       | using |       |
-|       |       |       |       |       |       | o     |       |
-|       |       |       |       |       |       | verla |       |
-|       |       |       |       |       |       | pping |       |
-|       |       |       |       |       |       | cha   |       |
-|       |       |       |       |       |       | nnels |       |
-|       |       |       |       |       |       | from  |       |
-|       |       |       |       |       |       | the   |       |
-|       |       |       |       |       |       | ne    |       |
-|       |       |       |       |       |       | twork |       |
-|       |       |       |       |       |       | p     |       |
-|       |       |       |       |       |       | erspe |       |
-|       |       |       |       |       |       | ctive |       |
-|       |       |       |       |       |       | sol   |       |
-|       |       |       |       |       |       | ution |       |
-|       |       |       |       |       |       | (rev  |       |
-|       |       |       |       |       |       | ised) |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | R     | R4-21 |       |       |       | Up    | 0.0.4 |
-| 21-08 | AN4\# | 13948 |       |       |       | dated |       |
-|       | 100-e |       |       |       |       | TR    |       |
-|       |       |       |       |       |       | 3     |       |
-|       |       |       |       |       |       | 8.844 |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | R     | R4-21 |       |       |       | TP    | 0.0.4 |
-| 21-08 | AN4\# | 14239 |       |       |       | for   |       |
-|       | 100-e |       |       |       |       | TR    |       |
-|       |       |       |       |       |       | 38    |       |
-|       |       |       |       |       |       | .844: |       |
-|       |       |       |       |       |       | 6 MHz |       |
-|       |       |       |       |       |       | for   |       |
-|       |       |       |       |       |       | n85   |       |
-|       |       |       |       |       |       | with  |       |
-|       |       |       |       |       |       | o     |       |
-|       |       |       |       |       |       | verla |       |
-|       |       |       |       |       |       | pping |       |
-|       |       |       |       |       |       | CHBW  |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | R     | R4-21 |       |       |       | TP on | 0.0.4 |
-| 21-08 | AN4\# | 12365 |       |       |       | using |       |
-|       | 100-e |       |       |       |       | next  |       |
-|       |       |       |       |       |       | l     |       |
-|       |       |       |       |       |       | arger |       |
-|       |       |       |       |       |       | ch    |       |
-|       |       |       |       |       |       | annel |       |
-|       |       |       |       |       |       | band  |       |
-|       |       |       |       |       |       | width |       |
-|       |       |       |       |       |       | sol   |       |
-|       |       |       |       |       |       | ution |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | R     | R4-21 |       |       |       | TP on | 0.0.4 |
-| 21-08 | AN4\# | 14999 |       |       |       | using |       |
-|       | 100-e |       |       |       |       | next  |       |
-|       |       |       |       |       |       | l     |       |
-|       |       |       |       |       |       | arger |       |
-|       |       |       |       |       |       | ch    |       |
-|       |       |       |       |       |       | annel |       |
-|       |       |       |       |       |       | band  |       |
-|       |       |       |       |       |       | width |       |
-|       |       |       |       |       |       | sol   |       |
-|       |       |       |       |       |       | ution |       |
-|       |       |       |       |       |       | (rev  |       |
-|       |       |       |       |       |       | ised) |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | R     | R4-21 |       |       |       | TP on | 0.0.4 |
-| 21-08 | AN4\# | 15114 |       |       |       | using |       |
-|       | 100-e |       |       |       |       | next  |       |
-|       |       |       |       |       |       | l     |       |
-|       |       |       |       |       |       | arger |       |
-|       |       |       |       |       |       | ch    |       |
-|       |       |       |       |       |       | annel |       |
-|       |       |       |       |       |       | band  |       |
-|       |       |       |       |       |       | width |       |
-|       |       |       |       |       |       | sol   |       |
-|       |       |       |       |       |       | ution |       |
-|       |       |       |       |       |       | (rev  |       |
-|       |       |       |       |       |       | ised) |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | R     | R4-21 |       |       |       | TP on | 0.0.4 |
-| 21-08 | AN4\# | 13046 |       |       |       | o     |       |
-|       | 100-e |       |       |       |       | verla |       |
-|       |       |       |       |       |       | pping |       |
-|       |       |       |       |       |       | UE    |       |
-|       |       |       |       |       |       | ch    |       |
-|       |       |       |       |       |       | annel |       |
-|       |       |       |       |       |       | bandw |       |
-|       |       |       |       |       |       | idths |       |
-|       |       |       |       |       |       | (O    |       |
-|       |       |       |       |       |       | verla |       |
-|       |       |       |       |       |       | pping |       |
-|       |       |       |       |       |       | CA)   |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | R     | R4-21 |       |       |       | TP on | 0.0.4 |
-| 21-08 | AN4\# | 15000 |       |       |       | o     |       |
-|       | 100-e |       |       |       |       | verla |       |
-|       |       |       |       |       |       | pping |       |
-|       |       |       |       |       |       | UE    |       |
-|       |       |       |       |       |       | ch    |       |
-|       |       |       |       |       |       | annel |       |
-|       |       |       |       |       |       | bandw |       |
-|       |       |       |       |       |       | idths |       |
-|       |       |       |       |       |       | (O    |       |
-|       |       |       |       |       |       | verla |       |
-|       |       |       |       |       |       | pping |       |
-|       |       |       |       |       |       | CA)   |       |
-|       |       |       |       |       |       | (rev  |       |
-|       |       |       |       |       |       | ised) |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | R     | R4-21 |       |       |       | TP to | 0.0.4 |
-| 21-08 | AN4\# | 13949 |       |       |       | TR    |       |
-|       | 100-e |       |       |       |       | 38    |       |
-|       |       |       |       |       |       | .844: |       |
-|       |       |       |       |       |       | Se    |       |
-|       |       |       |       |       |       | ction |       |
-|       |       |       |       |       |       | 6.2   |       |
-|       |       |       |       |       |       | O     |       |
-|       |       |       |       |       |       | verla |       |
-|       |       |       |       |       |       | pping |       |
-|       |       |       |       |       |       | UE    |       |
-|       |       |       |       |       |       | Ch    |       |
-|       |       |       |       |       |       | annel |       |
-|       |       |       |       |       |       | BWs   |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | R     | R4-21 |       |       |       | TP to | 0.0.4 |
-| 21-08 | AN4\# | 15050 |       |       |       | TR    |       |
-|       | 100-e |       |       |       |       | 38    |       |
-|       |       |       |       |       |       | .844: |       |
-|       |       |       |       |       |       | Se    |       |
-|       |       |       |       |       |       | ction |       |
-|       |       |       |       |       |       | 6.2   |       |
-|       |       |       |       |       |       | O     |       |
-|       |       |       |       |       |       | verla |       |
-|       |       |       |       |       |       | pping |       |
-|       |       |       |       |       |       | UE    |       |
-|       |       |       |       |       |       | Ch    |       |
-|       |       |       |       |       |       | annel |       |
-|       |       |       |       |       |       | BWs   |       |
-|       |       |       |       |       |       | (rev  |       |
-|       |       |       |       |       |       | ised) |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | R     | R4-21 |       |       |       | Up    | 0.0.5 |
-| 21-11 | AN4\# | 18777 |       |       |       | dated |       |
-|       | 101-e |       |       |       |       | TR    |       |
-|       |       |       |       |       |       | 3     |       |
-|       |       |       |       |       |       | 8.844 |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | R     | R4-21 |       |       |       | TP to | 0.0.5 |
-| 21-11 | AN4\# | 20012 |       |       |       | TR    |       |
-|       | 101-e |       |       |       |       | 3     |       |
-|       |       |       |       |       |       | 8.844 |       |
-|       |       |       |       |       |       | Se    |       |
-|       |       |       |       |       |       | ction |       |
-|       |       |       |       |       |       | 6.3.2 |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | R     | R4-21 |       |       |       | TP    | 0.0.5 |
-| 21-11 | AN4\# | 17954 |       |       |       | with  |       |
-|       | 101-e |       |       |       |       | fu    |       |
-|       |       |       |       |       |       | rther |       |
-|       |       |       |       |       |       | i     |       |
-|       |       |       |       |       |       | nform |       |
-|       |       |       |       |       |       | ation |       |
-|       |       |       |       |       |       | on UE |       |
-|       |       |       |       |       |       | ch    |       |
-|       |       |       |       |       |       | annel |       |
-|       |       |       |       |       |       | f     |       |
-|       |       |       |       |       |       | ilter |       |
-|       |       |       |       |       |       | a     |       |
-|       |       |       |       |       |       | ssump |       |
-|       |       |       |       |       |       | tions |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | R     | R4-21 |       |       |       | TP    | 0.0.5 |
-| 21-11 | AN4\# | 20013 |       |       |       | with  |       |
-|       | 101-e |       |       |       |       | fu    |       |
-|       |       |       |       |       |       | rther |       |
-|       |       |       |       |       |       | i     |       |
-|       |       |       |       |       |       | nform |       |
-|       |       |       |       |       |       | ation |       |
-|       |       |       |       |       |       | on UE |       |
-|       |       |       |       |       |       | ch    |       |
-|       |       |       |       |       |       | annel |       |
-|       |       |       |       |       |       | f     |       |
-|       |       |       |       |       |       | ilter |       |
-|       |       |       |       |       |       | a     |       |
-|       |       |       |       |       |       | ssump |       |
-|       |       |       |       |       |       | tions |       |
-|       |       |       |       |       |       | (rev  |       |
-|       |       |       |       |       |       | ised) |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | R     | R4-21 |       |       |       | TP    | 0.0.5 |
-| 21-11 | AN4\# | 17955 |       |       |       | with  |       |
-|       | 101-e |       |       |       |       | c     |       |
-|       |       |       |       |       |       | orrec |       |
-|       |       |       |       |       |       | tions |       |
-|       |       |       |       |       |       | for   |       |
-|       |       |       |       |       |       | o     |       |
-|       |       |       |       |       |       | verla |       |
-|       |       |       |       |       |       | pping |       |
-|       |       |       |       |       |       | cha   |       |
-|       |       |       |       |       |       | nnels |       |
-|       |       |       |       |       |       | from  |       |
-|       |       |       |       |       |       | the   |       |
-|       |       |       |       |       |       | ne    |       |
-|       |       |       |       |       |       | twork |       |
-|       |       |       |       |       |       | p     |       |
-|       |       |       |       |       |       | erspe |       |
-|       |       |       |       |       |       | ctive |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | R     | R4-21 |       |       |       | TP    | 0.0.5 |
-| 21-11 | AN4\# | 20015 |       |       |       | with  |       |
-|       | 101-e |       |       |       |       | c     |       |
-|       |       |       |       |       |       | orrec |       |
-|       |       |       |       |       |       | tions |       |
-|       |       |       |       |       |       | for   |       |
-|       |       |       |       |       |       | o     |       |
-|       |       |       |       |       |       | verla |       |
-|       |       |       |       |       |       | pping |       |
-|       |       |       |       |       |       | cha   |       |
-|       |       |       |       |       |       | nnels |       |
-|       |       |       |       |       |       | from  |       |
-|       |       |       |       |       |       | the   |       |
-|       |       |       |       |       |       | ne    |       |
-|       |       |       |       |       |       | twork |       |
-|       |       |       |       |       |       | p     |       |
-|       |       |       |       |       |       | erspe |       |
-|       |       |       |       |       |       | ctive |       |
-|       |       |       |       |       |       |       |       |
-|       |       |       |       |       |       | (rev  |       |
-|       |       |       |       |       |       | ised) |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | R     | R4-21 |       |       |       | TP to | 0.0.5 |
-| 21-11 | AN4\# | 19230 |       |       |       | TR    |       |
-|       | 101-e |       |       |       |       | 38    |       |
-|       |       |       |       |       |       | .844: |       |
-|       |       |       |       |       |       | on    |       |
-|       |       |       |       |       |       | the   |       |
-|       |       |       |       |       |       | use   |       |
-|       |       |       |       |       |       | of    |       |
-|       |       |       |       |       |       | o     |       |
-|       |       |       |       |       |       | verla |       |
-|       |       |       |       |       |       | pping |       |
-|       |       |       |       |       |       | ch    |       |
-|       |       |       |       |       |       | annel |       |
-|       |       |       |       |       |       | bandw |       |
-|       |       |       |       |       |       | idths |       |
-|       |       |       |       |       |       | from  |       |
-|       |       |       |       |       |       | UE    |       |
-|       |       |       |       |       |       | p     |       |
-|       |       |       |       |       |       | erspe |       |
-|       |       |       |       |       |       | ctive |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | R     | R4-21 |       |       |       | TP to | 0.0.5 |
-| 21-11 | AN4\# | 20016 |       |       |       | TR    |       |
-|       | 101-e |       |       |       |       | 38    |       |
-|       |       |       |       |       |       | .844: |       |
-|       |       |       |       |       |       | on    |       |
-|       |       |       |       |       |       | the   |       |
-|       |       |       |       |       |       | use   |       |
-|       |       |       |       |       |       | of    |       |
-|       |       |       |       |       |       | o     |       |
-|       |       |       |       |       |       | verla |       |
-|       |       |       |       |       |       | pping |       |
-|       |       |       |       |       |       | ch    |       |
-|       |       |       |       |       |       | annel |       |
-|       |       |       |       |       |       | bandw |       |
-|       |       |       |       |       |       | idths |       |
-|       |       |       |       |       |       | from  |       |
-|       |       |       |       |       |       | UE    |       |
-|       |       |       |       |       |       | p     |       |
-|       |       |       |       |       |       | erspe |       |
-|       |       |       |       |       |       | ctive |       |
-|       |       |       |       |       |       | (rev  |       |
-|       |       |       |       |       |       | ised) |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | R     | R4-21 |       |       |       | TP to | 0.0.5 |
-| 21-11 | AN4\# | 18778 |       |       |       | TR    |       |
-|       | 101-e |       |       |       |       | 38    |       |
-|       |       |       |       |       |       | .844: |       |
-|       |       |       |       |       |       | O     |       |
-|       |       |       |       |       |       | verla |       |
-|       |       |       |       |       |       | pping |       |
-|       |       |       |       |       |       | CBW   |       |
-|       |       |       |       |       |       | from  |       |
-|       |       |       |       |       |       | UE    |       |
-|       |       |       |       |       |       | p     |       |
-|       |       |       |       |       |       | erspe |       |
-|       |       |       |       |       |       | ctive |       |
-|       |       |       |       |       |       | util  |       |
-|       |       |       |       |       |       | izing |       |
-|       |       |       |       |       |       | intra |       |
-|       |       |       |       |       |       | -band |       |
-|       |       |       |       |       |       | CA    |       |
-|       |       |       |       |       |       | app   |       |
-|       |       |       |       |       |       | roach |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
-| 20    | R     | R4-21 |       |       |       | TP to | 0.0.5 |
-| 21-11 | AN4\# | 20017 |       |       |       | TR    |       |
-|       | 101-e |       |       |       |       | 38    |       |
-|       |       |       |       |       |       | .844: |       |
-|       |       |       |       |       |       | O     |       |
-|       |       |       |       |       |       | verla |       |
-|       |       |       |       |       |       | pping |       |
-|       |       |       |       |       |       | CBW   |       |
-|       |       |       |       |       |       | from  |       |
-|       |       |       |       |       |       | UE    |       |
-|       |       |       |       |       |       | p     |       |
-|       |       |       |       |       |       | erspe |       |
-|       |       |       |       |       |       | ctive |       |
-|       |       |       |       |       |       | util  |       |
-|       |       |       |       |       |       | izing |       |
-|       |       |       |       |       |       | intra |       |
-|       |       |       |       |       |       | -band |       |
-|       |       |       |       |       |       | CA    |       |
-|       |       |       |       |       |       | app   |       |
-|       |       |       |       |       |       | roach |       |
-|       |       |       |       |       |       | (rev  |       |
-|       |       |       |       |       |       | ised) |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+
+| Change history   | Change history   | Change history   | Change history   | Change history   | Change history   | Change history                                                                   | Change history   |
+|------------------|------------------|------------------|------------------|------------------|------------------|----------------------------------------------------------------------------------|------------------|
+| Date             | Meeting          | TDoc             | CR               | Rev              | Cat              | Subject/Comment                                                                  | New version      |
+| 2020-11          | RAN4#97          | R4-2015722       |                  |                  |                  | TR Skeleton                                                                      | 0.0.1            |
+| 2020-11          | RAN4#97          | R4-2016930       |                  |                  |                  | TR Skeleton (revised)                                                            | 0.0.1            |
+| 2021-01          | RAN4#98          | R4-2101555       |                  |                  |                  | Updated TR 38.844                                                                | 0.0.2            |
+| 2021-01          | RAN4#98          | R4-2103262       |                  |                  |                  | Updated TR 38.844 (revised)                                                      | 0.0.2            |
+| 2021-04          | RAN4#98bis       | R4-2106690       |                  |                  |                  | TP to the TR 38.844: Terminology                                                 | 0.0.2            |
+| 2021-04          | RAN4#98bis       | R4-2105420       |                  |                  |                  | TP to the TR 38.844: Terminology (revised)                                       | 0.0.2            |
+| 2021-05          | RAN4#99-e        | R4-2110487       |                  |                  |                  | Update TR 38.844 with TP                                                         | 0.0.3            |
+| 2021-05          | RAN4#99-e        | R4-2108021       |                  |                  |                  | TP on the use of overlapping channel bandwidths from UE perspective              | 0.0.3            |
+| 2021-05          | RAN4#99-e        | R4-2107885       |                  |                  |                  | TP to TR38.844 on wider channel BW method                                        | 0.0.3            |
+| 2021-05          | RAN4#99-e        | R4-2108022       |                  |                  |                  | TP to TR38.844 on wider channel BW method (revised)                              | 0.0.3            |
+| 2021-05          | RAN4#99-e        | R4-2109436       |                  |                  |                  | TP on using overlapping channels from the network perspective solution           | 0.0.3            |
+| 2021-05          | RAN4#99-e        | R4-2107887       |                  |                  |                  | TP on using overlapping channels from the network perspective solution (revised) | 0.0.3            |
+| 2021-05          | RAN4#99-e        | R4-2108112       |                  |                  |                  | TP on using overlapping channels from the network perspective solution (revised) | 0.0.3            |
+| 2021-08          | RAN4#100-e       | R4-2113948       |                  |                  |                  | Updated TR 38.844                                                                | 0.0.4            |
+| 2021-08          | RAN4#100-e       | R4-2114239       |                  |                  |                  | TP for TR 38.844: 6 MHz for n85 with overlapping CHBW                            | 0.0.4            |
+| 2021-08          | RAN4#100-e       | R4-2112365       |                  |                  |                  | TP on using next larger channel bandwidth solution                               | 0.0.4            |
+| 2021-08          | RAN4#100-e       | R4-2114999       |                  |                  |                  | TP on using next larger channel bandwidth solution (revised)                     | 0.0.4            |
+| 2021-08          | RAN4#100-e       | R4-2115114       |                  |                  |                  | TP on using next larger channel bandwidth solution (revised)                     | 0.0.4            |
+| 2021-08          | RAN4#100-e       | R4-2113046       |                  |                  |                  | TP on overlapping UE channel bandwidths (Overlapping CA)                         | 0.0.4            |
+| 2021-08          | RAN4#100-e       | R4-2115000       |                  |                  |                  | TP on overlapping UE channel bandwidths (Overlapping CA) (revised)               | 0.0.4            |
+| 2021-08          | RAN4#100-e       | R4-2113949       |                  |                  |                  | TP to TR 38.844: Section 6.2 Overlapping UE Channel BWs                          | 0.0.4            |
+| 2021-08          | RAN4#100-e       | R4-2115050       |                  |                  |                  | TP to TR 38.844: Section 6.2 Overlapping UE Channel BWs (revised)                | 0.0.4            |
+| 2021-11          | RAN4#101-e       | R4-2118777       |                  |                  |                  | Updated TR 38.844                                                                | 0.0.5            |
+|                  |                  |                  |                  |                  |                  |                                                                                  |                  |
+|                  |                  |                  |                  |                  |                  |                                                                                  |                  |
+|                  |                  |                  |                  |                  |                  |                                                                                  |                  |
+|                  |                  |                  |                  |                  |                  |                                                                                  |                  |
+|                  |                  |                  |                  |                  |                  |                                                                                  |                  |
+|                  |                  |                  |                  |                  |                  |                                                                                  |                  |
+|                  |                  |                  |                  |                  |                  |                                                                                  |                  |
+|                  |                  |                  |                  |                  |                  |                                                                                  |                  |
+|                  |                  |                  |                  |                  |                  |                                                                                  |                  |
