@@ -9,7 +9,7 @@ This repository aims to provide the tools to deploy an AI-powered assistant for 
    - Output is organized by release in the `spec_md/` directory
 
 2. **ChatGPT-like Features (Ollama + AnythingLLM):**
-   - Runs Ollama locally to provide LLM inference (e.g., mistral, deepseek-r1)
+   - Runs Ollama locally to provide LLM inference (e.g., qwen3:30b-a3b, deepseek-r1)
    - Deploys AnythingLLM via Docker to enable a chat interface over your documents
    - Allows advanced querying, context window management
 
@@ -29,7 +29,6 @@ This repository aims to provide the tools to deploy an AI-powered assistant for 
 - Docker Compose
 - Python 3.8+
 - Ollama (for local LLMs)
-- Pandoc
 
 ### Steps
 1. Clone this repository:
@@ -42,7 +41,7 @@ This repository aims to provide the tools to deploy an AI-powered assistant for 
 2. **Install Ollama and Download Models:**
    ```bash
    curl -fsSL https://ollama.com/install.sh | sh
-   ollama pull deepseek-r1
+   ollama pull qwen3:30b-a3b
    ollama pull nomic-embed-text
    # You can use other Ollama models as well. See https://ollama.com/library for available models.
    ```
@@ -65,7 +64,6 @@ SERIES = ["38_series"]
 Then run:
 
 ```bash
-sudo apt-get install -y pandoc
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -84,8 +82,8 @@ This will download, extract, and convert 3GPP specs to markdown in `spec_md/`.
 
    **Note:** If Ollama is already running, you can skip this step.
    ```bash
-   ollama serve deepseek-r1
-   # Replace 'deepseek-r1' with any other model you have pulled if desired.
+   ollama serve qwen3:30b-a3b
+   # Replace 'qwen3:30b-a3b' with any other model you have pulled if desired.
    ```
    Visit http://localhost:11434 to verify Ollama is running.
 
@@ -135,9 +133,6 @@ BSD 2-Clause License
 
 - **Missing Python dependencies:**  
    Run `pip install -r requirements.txt` to install required packages.
-
-- **Pandoc not found:**  
-   Install Pandoc with `sudo apt-get install -y pandoc`.
 
 - **Specs not downloading:**  
    Check your internet connection and verify the `RELEASES` and `SERIES` parameters in `3gpp_extraction.py`.
